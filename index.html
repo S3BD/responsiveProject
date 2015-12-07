@@ -34,7 +34,7 @@
         <core-item icon="trending-up" label="Les dérivés"><a href="#derives"></a></core-item>
         <core-item icon="work" label="Les frameworks"><a href="#framework"></a></core-item>
         <core-item icon="polymer" label="A propos du site"><a href="#a_propos"></a></core-item>
-        <core-item icon="icons:stars" label="Sources"><a href="#sources"></a></core-item>
+        <core-item icon="stars" label="Sources"><a href="#sources"></a></core-item>
       </core-menu>
     </core-header-panel>
   
@@ -42,7 +42,7 @@
     <span tool>Responsive Design</span>
     
     <div class="content">
-      <article id="home">
+      <section id="home">
         <h2>Qu'est-ce que le Responsive Web Design ?</h2>
         <img class="right" src="images/embrace-responsive-web-design.png">
         <p>
@@ -50,66 +50,74 @@
         </p>
         <p>
           Une expérience utilisateur "Responsive" réussie implique donc un minimum de redimensionnement (zoom), de recadrage, et de défilements multidirectionnels de pages.
-        </p>
+        </p>ddd
         <p>
           Le terme de "Responsive Web design" a été introduit par Ethan Marcotte dans un article de A List Apart publié en mai 2010.
           Il décrira par la suite sa théorie et pratique du responsive dans son ouvrage "Responsive Web Design" publié en 2011. Celle-ci se limite à des adaptations côté client (grilles flexibles en pourcentages, images fluides et CSS3 Media Queries).
         </p>
-      </article>
-      <article id="differentes_approches" class="top-spacing">
+      </section>
+      <section id="differentes_approches" class="top-spacing">
         <h2>Les différentes approches</h2>
-        <h3>Desktop First</h3>
-        <img class="left" src="images/desktop-first.png">
-        <p>
-          Ce concept ne portait pas de nom avant l’arrivée du concept de « Mobile First » mais il désigne tout simplement un site qui a été créé pour s’afficher sur un ordinateur en premier lieu. Ce n’est qu’ensuite, avec le concept de « Progressive Enhancement » (Amélioration Progressive) que vient se greffer des gaps visuels pour les versions tablette et mobile (avec éventuellement de la fluidité).
-        </p>
-        <p>
-          Cette approche donne lieu en générale à des sites finaux « Limited Responsive Layout » ou le site original est le gap final du rendu visuel. En générale ce type d’approche permet de supporter des vieux navigateurs comme IE7 et IE8 tout en permettant du « Responsive Web Design » sur les autres. Cette approche à le défaut d’alourdir en poids les fichiers au fur et à mesure qu’on habille des périphériques aux écrans plus petits.
-        </p>
-        <h3>Mobile First</h3>
-        <img class="right" src="images/mobile-first.png">
-        <p>
-          C’est l’approche se rapprochant le plus de l’idée première du « Responsive Web Design » permettant un affichage Responsive du petit écran vers les écrans très grand. Cette approche consiste à d’abord pensé le site et le design sur petit périphérique comme des mobiles (d’où le nom) puis ensuite d’augmenter le design vers des périphériques plus gros.
-        </p>
-        <p>
-          Cette approche, en plus de permettre une responsivité infinie permet également de s’assurer que ce sont les plus petits périphériques qui chargent le moins de ressources. Cette approche impose cependant le concept de « Fallback Mechanism » (Dégradation élégante) pour ajouter le support de IE8 et/ou IE7 n’étant pas supporté de base dans cette approche (ou ayant alors l’apparence mobile).
-        </p>
-      </article>
-      <article id="differentes_techniques" class="top-spacing">
+        <article>
+          <h3>Desktop First</h3>
+          <img class="left" src="images/desktop-first.png">
+          <p>
+            Ce concept ne portait pas de nom avant l’arrivée du concept de « Mobile First » mais il désigne tout simplement un site qui a été créé pour s’afficher sur un ordinateur en premier lieu. Ce n’est qu’ensuite, avec le concept de « Progressive Enhancement » (Amélioration Progressive) que vient se greffer des gaps visuels pour les versions tablette et mobile (avec éventuellement de la fluidité).
+          </p>
+          <p>
+            Cette approche donne lieu en générale à des sites finaux « Limited Responsive Layout » ou le site original est le gap final du rendu visuel. En générale ce type d’approche permet de supporter des vieux navigateurs comme IE7 et IE8 tout en permettant du « Responsive Web Design » sur les autres. Cette approche à le défaut d’alourdir en poids les fichiers au fur et à mesure qu’on habille des périphériques aux écrans plus petits.
+          </p>
+        </article>
+        <article>
+          <h3>Mobile First</h3>
+          <img class="right" src="images/mobile-first.png">
+          <p>
+            C’est l’approche se rapprochant le plus de l’idée première du « Responsive Web Design » permettant un affichage Responsive du petit écran vers les écrans très grand. Cette approche consiste à d’abord pensé le site et le design sur petit périphérique comme des mobiles (d’où le nom) puis ensuite d’augmenter le design vers des périphériques plus gros.
+          </p>
+          <p>
+            Cette approche, en plus de permettre une responsivité infinie permet également de s’assurer que ce sont les plus petits périphériques qui chargent le moins de ressources. Cette approche impose cependant le concept de « Fallback Mechanism » (Dégradation élégante) pour ajouter le support de IE8 et/ou IE7 n’étant pas supporté de base dans cette approche (ou ayant alors l’apparence mobile).
+          </p>
+        </article>
+      </section>
+      <section id="differentes_techniques" class="top-spacing">
         <h2>Les différentes techniques</h2>
         <h3>Medias Queries</h3>
-      </article>
-      <article id="derives" class="top-spacing">
+      </section>
+      <section id="derives" class="top-spacing">
         <h2>Les dérivés du Responsive Design</h2>
-        <h3>Flat Design</h3>
-        <img class="left redimension_gauche" src="images/windows8flat-design.jpg">
-        <p>
-          Le Flat Design est une association de termes par rapport à une tendance. Si on traduit littéralement le terme « Flat Design« , on pourrait avoir une phrase du genre « Design à Plat ». Le Flat Design est un style de design web excluant tous détails superflus de la création. Il se caractérise par des aplats de couleurs sobres mais actuelles et dont l’organisation de la typographie créée la structure du contenu. Le Flat design est un style minimaliste, extrêmement clair et épuré. « Less is more » prend ici tout son sens.
-        </p>
-        <p>
-          Ce design est de plus en plus utilisé et il a notamment commencé à faire son apparation sur Windows avec la sortie de Windows 8. En effet, chaque élément est représenté sous la forme de "tuiles" et il n'y a aucun reflief ou ombres.
-        </p>
-        <p>
-          Ce courant est donc à l'opposé du <strong>skeuomorphisme</strong>. En design graphique, ce mot désigne le fait de réutiliser l’apparence d’un objet familier pour un objet virtuel, qui remplit la même fonction, afin de rendre son utilisation totalement intuitive.
-        </p>
-        <h3>Material Design</h3>
-        <img class="right redimension_droite" src="images/MTI5MDIzOTE2MTIyNTU2NDI2.gif">
-        <p>
-          Le Material Design est un ensemble de règles de design proposées par Google et qui s'appliquent à l'interface graphique des logiciels et applications. Le Material Design est un dérivé du Flat Design, il garde donc certains principes du Flat Design tout  en y ajoutant quelques ajouts.
-        </p>
-        <p>
-          Premièrement, le Material Design ajoute une dimension verticale supplémentaire. Comme on peut le voir sur le gif par exemple avec le bouton "+" qui est positionné sur un autre composant. Cela apporte une vraie profondeur au design des applications ou sites web.
-        </p>
-        <p>
-          Ensuite, il ajoute notamment un effet d'ombrage léger sur certaine éléments ainsi que des effets minimalistes lors d'un clic sur un bouton par exemple. Tout ceci dans le but de rendre l'expérience plus dynamique qu'avec le Flat Design.
-        </p>
-        <p>
-          Pour finir, le Material Design a été introduit avec la version 5.0 de l'OS mobile Android et il est depuis utilisé sur de nombreuses applications disponibles sur le marché.
-        </p>  
-      </article>
-      <article id="framework" class="top-spacing">
+        <article>
+          <h3>Flat Design</h3>
+          <img class="left redimension_gauche" src="images/windows8flat-design.jpg">
+          <p>
+            Le Flat Design est une association de termes par rapport à une tendance. Si on traduit littéralement le terme « Flat Design« , on pourrait avoir une phrase du genre « Design à Plat ». Le Flat Design est un style de design web excluant tous détails superflus de la création. Il se caractérise par des aplats de couleurs sobres mais actuelles et dont l’organisation de la typographie créée la structure du contenu. Le Flat design est un style minimaliste, extrêmement clair et épuré. « Less is more » prend ici tout son sens.
+          </p>
+          <p>
+            Ce design est de plus en plus utilisé et il a notamment commencé à faire son apparation sur Windows avec la sortie de Windows 8. En effet, chaque élément est représenté sous la forme de "tuiles" et il n'y a aucun reflief ou ombres.
+          </p>
+          <p>
+            Ce courant est donc à l'opposé du <strong>skeuomorphisme</strong>. En design graphique, ce mot désigne le fait de réutiliser l’apparence d’un objet familier pour un objet virtuel, qui remplit la même fonction, afin de rendre son utilisation totalement intuitive.
+          </p>
+        </article>
+        <article>
+          <h3>Material Design</h3>
+          <img class="right redimension_droite" src="images/MTI5MDIzOTE2MTIyNTU2NDI2.gif">
+          <p>
+            Le Material Design est un ensemble de règles de design proposées par Google et qui s'appliquent à l'interface graphique des logiciels et applications. Le Material Design est un dérivé du Flat Design, il garde donc certains principes du Flat Design tout  en y ajoutant quelques ajouts.
+          </p>
+          <p>
+            Premièrement, le Material Design ajoute une dimension verticale supplémentaire. Comme on peut le voir sur le gif par exemple avec le bouton "+" qui est positionné sur un autre composant. Cela apporte une vraie profondeur au design des applications ou sites web.
+          </p>
+          <p>
+            Ensuite, il ajoute notamment un effet d'ombrage léger sur certaine éléments ainsi que des effets minimalistes lors d'un clic sur un bouton par exemple. Tout ceci dans le but de rendre l'expérience plus dynamique qu'avec le Flat Design.
+          </p>
+          <p>
+            Pour finir, le Material Design a été introduit avec la version 5.0 de l'OS mobile Android et il est depuis utilisé sur de nombreuses applications disponibles sur le marché.
+          </p>
+        </article>  
+      </section>
+      <section id="framework" class="top-spacing">
         <h2>Les frameworks disponibles</h2>
-        Voici une liste de 5 frameworks CSS permettant de faire du Responsive Design :
+        Voici une liste de 6 frameworks CSS permettant de faire du Responsive Design :
         <ul>
           <li>1. <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> : Proposé par Twitter qui, entre de nombreux composants, propose un système de grid layout.</li>
           <li>2. <a href="https://developers.google.com/web/starter-kit/" target="_blank">Web Starter Kit</a></li> : Un kit de démarrage rapide sorti en 2014 par les équipes Google permettant d’adapter les contenus à tous les périphériques.
@@ -117,8 +125,8 @@
           <li>4. <a href="http://foundation.zurb.com/" target="_blank">Foundation</a> : Qu est un framework CSS ultra complet proposant un grid layout responsive et de nombreux composants d’UI.</li>
           <li>5. <a href="http://www.responsivegridsystem.com/" target="_blank">Responsive Grid System</a> : Ultra léger, Responsive Grid System se présente comme un kit de démarrage rapide groupant des CSS en fonction de vos besoins, ni plus ni moins.</li>
         </ul>
-      </article>
-      <article id="a_propos" class="top-spacing">
+      </section>
+      <section id="a_propos" class="top-spacing">
         <h2>A propos du site</h2>
         <p>Pour réaliser ce site de présentation sur le Responsive Design, nous avons décidé d'utiliser le framework <strong>Polymer</strong>, développé par Google.</p>
         <p>
@@ -130,16 +138,21 @@
         <p>
           En effet, chaque web component est indépendant et est du coup facilement réutilisable tout au long du développement d’une application. Cette nouvelle technologie évite donc les répétitions et permet de gagner du temps.
         </p>
-      </article>
-      <article id="contact" class="top-spacing">
-        <h2>Contact</h2>
+      </section>
+      <section id="sources" class="top-spacing">
+        <h2>Sources</h2>
         <ul>
-          <li>Sébastien Divry : divry.sebastien@gmail.com</li>
-          <li>Thomas Cantegrel : thomas.cantegrel@gmail.com</li>
-          <li>Maupin Alexandre : </li>
+          <li><a href="https://openclassrooms.com/courses/qu-est-ce-que-le-responsive-web-design" target="_blank">Openclassrooms - Responsive Design</a></li>
+          <li><a href="http://wdfriday.com/blog/2012/03/css-et-mobile-first-proceder-par-amelioration-progressive/" target="_blank">Wdfriday.com - Mobile First</a></li>
+          <li><a href="http://blog.lunaweb.fr/interface-flat-design/" target="_blank">Blog LunaWeb - Flat Design</a></li>
+          <li><a href="https://www.google.com/design/spec/material-design/introduction.html" target="_blank">Material Design Google</a></li>
+          <li><a href="http://www.awwwards.com/what-are-frameworks-22-best-responsive-css-frameworks-for-web-design.html" target="_blank">Awwwards.com / Frameworks CSS</a></li>
         </ul>  
-      </article>
+      </section>
     </div>
+    <footer>
+      <p>©Sébastien Divry & Thomas Cantegrel - UPJV MIAGE2 2015-2016 - All right reserved</p>
+    </footer>
   </core-scaffold>
   
 </body>

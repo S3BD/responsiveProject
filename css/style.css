@@ -13,16 +13,16 @@ body {
 }
 	
 core-scaffold core-toolbar {
-	background-color: #E91E63;
+	background-color: #0097A7;
 	color: #FFF;
 }
 
 h2 {
-  color: #E91E63;
+  color: #0097A7;
 }
 
 h3 {
-  color: #FB1F77;
+  color: #00BCD4;
 }
 
 
@@ -48,6 +48,11 @@ a:link
 { 
  color: #556; 
 } 
+
+a:visited /* propriétés des liens déjà visités */
+{
+   color: #556;
+}
 
 img {
 	width: 400px;
@@ -75,4 +80,15 @@ img {
 
 body .top-spacing {
     padding-top: 0.6em;
+}
+
+footer {
+    background-color: #0097A7;
+      position: fixed;
+      width: 100%;
+}
+footer p {
+    color: #FFF;
+    font-size: 1em;
+    text-align: center;
 }
