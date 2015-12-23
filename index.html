@@ -10,21 +10,23 @@
   
   <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
   <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
-  <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
-  <link rel="import" href="bower_components/core-menu/core-menu.html">
-  <link rel="import" href="bower_components/core-item/core-item.html">
-  <link rel="import" href="bower_components/core-scaffold/core-scaffold.html">
-  <link rel="import" href="bower_components/polymer/polymer.html">
-  <link rel="import" href="bower_components/core-icons/social-icons.html">
-  <link rel="import" href="bower_components/core-icons/hardware-icons.html">
+  <link rel="import" href="bower_components/core-toolbar/core-toolbar.html"/>
+  <link rel="import" href="bower_components/core-menu/core-menu.html"/>
+  <link rel="import" href="bower_components/core-item/core-item.html"/>
+  <link rel="import" href="bower_components/core-scaffold/core-scaffold.html"/>
+  <link rel="import" href="bower_components/polymer/polymer.html"/>
+  <link rel="import" href="bower_components/core-icons/social-icons.html"/>
+  <link rel="import" href="bower_components/core-icons/hardware-icons.html"/>
 </head>
 
 <body>
     <core-scaffold>
 
     <core-header-panel navigation flex>
-      <core-toolbar id="navheader">
-        <span>Menu</span>
+      <core-toolbar id="navheader" class="tall">
+          <div id="middleBar" class="toolbar-tools" center="" horizontal="" layout="">
+        <div class="bold">Menu</div>
+        </div>
       </core-toolbar>
       <core-menu>
         <core-item icon="home" label="Accueil"><a href="#home"></a></core-item>
@@ -38,11 +40,12 @@
     </core-header-panel>
   
     
-    <span tool>Responsive Design</span>
+    <span tool class="bold">Responsive Design</span>
     
     <div class="content">
       <section id="home">
         <h2>Qu'est-ce que le Responsive Web Design ?</h2>
+        <article class="bordered">
         <img alt="embrace-responsive-web-design" class="right" src="images/embrace-responsive-web-design.png">
         <p>
           Le Responsive Web design est une approche de conception Web qui vise à l'élaboration de sites offrant une expérience de lecture et de navigation optimales pour l'utilisateur quelque soit sa gamme d'appareil (téléphones mobiles, tablettes, liseuses, moniteurs d'ordinateur de bureau).
@@ -54,10 +57,11 @@
           Le terme de "Responsive Web design" a été introduit par Ethan Marcotte dans un article de A List Apart publié en mai 2010.
           Il décrira par la suite sa théorie et pratique du responsive dans son ouvrage "Responsive Web Design" publié en 2011. Celle-ci se limite à des adaptations côté client (grilles flexibles en pourcentages, images fluides et CSS3 Media Queries).
         </p>
+        </article>
       </section>
       <section id="differentes_approches" class="top-spacing">
         <h2>Les différentes approches</h2>
-        <article>
+        <article class="bordered">
           <h3>Desktop First</h3>
           <img alt="desktop-first" class="left" src="images/desktop-first.png">
           <p>
@@ -67,7 +71,7 @@
             Cette approche donne lieu en générale à des sites finaux « Limited Responsive Layout » ou le site original est le gap final du rendu visuel. En générale ce type d’approche permet de supporter des vieux navigateurs comme IE7 et IE8 tout en permettant du « Responsive Web Design » sur les autres. Cette approche à le défaut d’alourdir en poids les fichiers au fur et à mesure qu’on habille des périphériques aux écrans plus petits.
           </p>
         </article>
-        <article>
+        <article class="bordered">
           <h3>Mobile First</h3>
           <img alt="mobile-first" class="right" src="images/mobile-first.png">
           <p>
@@ -80,11 +84,13 @@
       </section>
       <section id="differentes_techniques" class="top-spacing">
         <h2>Les différentes techniques</h2>
+        <article class="bordered">
         <h3>Medias Queries</h3>
+        </article>
       </section>
       <section id="derives" class="top-spacing">
         <h2>Les dérivés du Responsive Design</h2>
-        <article>
+        <article class="bordered"> 
           <h3>Flat Design</h3>
           <img alt="windows8flat-design" class="left redimension_gauche" src="images/windows8flat-design.jpg">
           <p>
@@ -97,8 +103,8 @@
             Ce courant est donc à l'opposé du <strong>skeuomorphisme</strong>. En design graphique, ce mot désigne le fait de réutiliser l’apparence d’un objet familier pour un objet virtuel, qui remplit la même fonction, afin de rendre son utilisation totalement intuitive.
           </p>
         </article>
-        <article>
-          <h3>Material Design</h3>
+        <article class="bordered">
+                    <h3>Material Design</h3>
           <img alt="MTI5MDIzOTE2MTIyNTU2NDI2" class="right redimension_droite" src="images/MTI5MDIzOTE2MTIyNTU2NDI2.gif">
           <p>
             Le Material Design est un ensemble de règles de design proposées par Google et qui s'appliquent à l'interface graphique des logiciels et applications. Le Material Design est un dérivé du Flat Design, il garde donc certains principes du Flat Design tout  en y ajoutant quelques ajouts.
@@ -116,17 +122,42 @@
       </section>
       <section id="framework" class="top-spacing">
         <h2>Les frameworks disponibles</h2>
-        Voici une liste de 6 frameworks CSS permettant de faire du Responsive Design :
-        <ul>
-          <li>1. <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> : Proposé par Twitter qui, entre de nombreux composants, propose un système de grid layout.</li>
-          <li>2. <a href="https://developers.google.com/web/starter-kit/" target="_blank">Web Starter Kit</a></li> : Un kit de démarrage rapide sorti en 2014 par les équipes Google permettant d’adapter les contenus à tous les périphériques.
-          <li>3. <a href="http://gumbyframework.com/" target="_blank">Gumby</a> : Propose un kit complet de composants CSS ainsi qu’un grid layout reponsive très simple.</li>
-          <li>4. <a href="http://foundation.zurb.com/" target="_blank">Foundation</a> : Qu est un framework CSS ultra complet proposant un grid layout responsive et de nombreux composants d’UI.</li>
-          <li>5. <a href="http://www.responsivegridsystem.com/" target="_blank">Responsive Grid System</a> : Ultra léger, Responsive Grid System se présente comme un kit de démarrage rapide groupant des CSS en fonction de vos besoins, ni plus ni moins.</li>
-        </ul>
+        <article class="bordered">
+        <div class="item bordered">           
+        <img src="images/logo/bootstrap_logo.png" class="round_logo">
+        <p>
+        <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> : Proposé par Twitter qui, entre de nombreux composants, propose un système de grid layout.
+        </p>
+        </div>
+        <div class="item bordered">
+        <img src="images/logo/bootstrap_logo.png" class="round_logo">
+        <p>
+        <a href="https://developers.google.com/web/starter-kit/" target="_blank">Web Starter Kit</a> : Un kit de démarrage rapide sorti en 2014 par les équipes Google permettant d’adapter les contenus à tous les périphériques.
+        </p>
+        </div>
+        <div class="item bordered">
+        <img src="images/logo/bootstrap_logo.png" class="round_logo">   
+        <p>
+        <a href="http://gumbyframework.com/" target="_blank">Gumby</a> : Propose un kit complet de composants CSS ainsi qu’un grid layout reponsive très simple.
+        </p>
+        </div>
+        <div class="item bordered">
+        <img src="images/logo/bootstrap_logo.png" class="round_logo">  
+        <p> 
+        <a href="http://foundation.zurb.com/" target="_blank">Foundation</a> : Qu est un framework CSS ultra complet proposant un grid layout responsive et de nombreux composants d’UI.
+        </p>
+        </div>
+        <div class="item bordered">
+                 <img src="images/logo/bootstrap_logo.png" class="round_logo">   
+        <p>
+        <a href="http://www.responsivegridsystem.com/" target="_blank">Responsive Grid System</a> : Ultra léger, Responsive Grid System se présente comme un kit de démarrage rapide groupant des CSS en fonction de vos besoins, ni plus ni moins.
+        </p>
+        </div>
+        </article>
       </section>
       <section id="a_propos" class="top-spacing">
         <h2>A propos du site</h2>
+        <article class="bordered">
         <p>Pour réaliser ce site de présentation sur le Responsive Design, nous avons décidé d'utiliser le framework <strong>Polymer</strong>, développé par Google.</p>
         <p>
           Polymer permet de découper une application web en plusieurs morceaux (composants), indépendants, qui contiennent le code HTML (structure), le style CSS et le code Javascript (intelligence du composant). Un composant peut par exemple être un menu, un bouton ou encore un widget Twitter. Il existe un ensemble de composants Polymer préexistants qui permettent de gagner du temps pour démarrer une application web.
@@ -137,16 +168,19 @@
         <p>
           En effet, chaque web component est indépendant et est du coup facilement réutilisable tout au long du développement d’une application. Cette nouvelle technologie évite donc les répétitions et permet de gagner du temps.
         </p>
+        </article>
       </section>
       <section id="sources" class="top-spacing">
         <h2>Sources</h2>
+        <article class="bordered">
         <ul>
           <li><a href="https://openclassrooms.com/courses/qu-est-ce-que-le-responsive-web-design" target="_blank">Openclassrooms - Responsive Design</a></li>
           <li><a href="http://wdfriday.com/blog/2012/03/css-et-mobile-first-proceder-par-amelioration-progressive/" target="_blank">Wdfriday.com - Mobile First</a></li>
           <li><a href="http://blog.lunaweb.fr/interface-flat-design/" target="_blank">Blog LunaWeb - Flat Design</a></li>
           <li><a href="https://www.google.com/design/spec/material-design/introduction.html" target="_blank">Material Design Google</a></li>
           <li><a href="http://www.awwwards.com/what-are-frameworks-22-best-responsive-css-frameworks-for-web-design.html" target="_blank">Awwwards.com / Frameworks CSS</a></li>
-        </ul>  
+        </ul>
+        </article>  
       </section>
     </div>
     <footer>
