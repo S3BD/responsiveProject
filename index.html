@@ -9,6 +9,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   
   <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="css/hybrid.css">
   <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
   <link rel="import" href="bower_components/core-toolbar/core-toolbar.html"/>
   <link rel="import" href="bower_components/core-menu/core-menu.html"/>
@@ -17,6 +18,8 @@
   <link rel="import" href="bower_components/polymer/polymer.html"/>
   <link rel="import" href="bower_components/core-icons/social-icons.html"/>
   <link rel="import" href="bower_components/core-icons/hardware-icons.html"/>
+  <script src="js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </head>
 
 <body>
@@ -96,7 +99,7 @@
             Avec CSS2 et HTML4, il était déjà possible de spécifier un média de destination pour l'application d'une ou plusieurs feuilles de style.
             La balise <span class="blue_word">&lt;link></span> est alors dupliquée pour autant de feuilles de style que nécessaire, et comporte un attribut media précisant le contexte dans lequel les styles doivent être appliqués :
         </p>
-         <img alt="medias-queries-exemple-1" src="images/medias-queries-exemple-1.png">
+         <pre><code class="html">&lt;head><br>&lt;meta charset="utf-8"><br>&lt;Media Queries !&lt;/title><br>&lt;link rel="stylesheet" media="screen" href="screen.css" type="text/css"><br>&lt;link rel="stylesheet" media="print" href="print.css" type="text/css"><br>&lt;/head><br>&lt;body><br>...<br>&lt;/body></code></pre>
          <p>
              L'attribut media peut prendre (depuis CSS2) les valeurs suivantes :
              <ul>
@@ -113,7 +116,7 @@
             </ul>
             Ces directives peuvent parfaitement être intégrées au sein même d'une feuille de style grâce à une règle <span class="blue_word">@media</span> suivie directement du type. La syntaxe sera alors légèrement différente :
          </p>
-         <img alt="medias-queries-exemple-2" src="images/medias-queries-exemple-2.png">
+         <pre><code class="css">@media print{<br> #menu , #footer , #aside {<br>  display:none;<br> }<br> body {<br>  font-size:120%;<br>  color:black;<br> }<br>}</code></pre>
          <p>
              Les médias peuvent être très variés, surtout en ce qui concerne les écrans. Tout dépend du support de l'interprétation de ces définitions. Rien n'oblige un périphérique ou un navigateur à appliquer ce qui semblerait le plus indiqué. Par exemple, la règle media <span class="blue_word">handheld</span> est ignorée par la grande majorité des navigateurs mobiles, y compris par Safari Mobile sur iOS qui se considère comme un média <span class="blue_word">screen</span>.
          </p>
@@ -130,11 +133,12 @@
              Pour obtenir l'équivalent du "ou", il suffit d'énumérer différentes media queries à la suite, séparées par des <strong>virgules</strong> : si l'une d'entre elles est valable, alors l'ensemble de la règle sera appliquée.
              Les deux exemples suivants ciblent les écrans de largeur inférieure à 640 pixels grâce à la règle <span class="blue_word">max-width</span> associée à la valeur <span class="blue_word">640px</span>.
          </p>
-         <img alt="medias-queries-exemple-3" src="images/medias-queries-exemple-3.png">
+         <pre><code class="html">&lt;link rel="stylesheet" media="screen and (max-width: 640px)" href="smallscreen.css" type="text/css"></code></pre>
+         <pre><code class="css">@media screen and (max-width: 640px) {<br> .bloc {<br>  display:block;<br>  clear:both;<br> }<br>}</code></pre>
          <p>
              Les combinaisons peuvent être multiples. Ici l'on s'adresse à un écran dont la résolution en largeur est comprise entre 200 et 640 pixels :
          </p>
-         <img alt="medias-queries-exemple-4" src="images/medias-queries-exemple-4.png">
+         <pre><code class="css">@media screen and (min-width:200px) and (max-width: 640px) {<br> .bloc {<br>  display:block;<br>  clear:both;<br> }<br>}</code></pre>
          <h4>Fonctionnalités</h4>
          <p>
              La plupart des critères peuvent être préfixés par <span class="blue_word">min-</span> et <span class="blue_word">max-</span> lorsqu'elles acceptent des valeurs numériques pour définir des valeurs minimales ou maximales à respecter.
@@ -180,7 +184,7 @@
             ajuster les dimensions et marges
             La fonctionnalité <span class="blue_word">orientation</span> a été introduite pour des périphériques pouvant être orientés, par exemple l'iPad. On peut alors déclarer une feuille de style spécifique pour ajuster l'affichage :
          </p>
-                  <img alt="medias-queries-exemple-5" src="images/medias-queries-exemple-5.png">
+        <pre><code class="html">&lt;link rel="stylesheet" media="(orientation:portrait)" href="portrait.css"><br>&lt;link rel="stylesheet" media="(orientation:landscape)" href="paysage.css"></code></pre>
          <p>
              Certains navigateurs classiques l'implémentent également en version bureau et calculent le ratio hauteur/largeur pour simuler un affichage "orienté".
          </p>
@@ -198,14 +202,18 @@
              </ul>
             Globalement, si un navigateur ne les supporte pas du tout, il continuera à appliquer la règle concernant le type de média qui figure en début de chaîne.
          </p>
-                    <img alt="medias-queries-exemple-6" src="images/medias-queries-exemple-6.png">
+         <pre><code class="html">&lt;link rel="stylesheet" media="screen and (max-width: 640px)" href="smallscreen.css" type="text/css"></code></pre>
          <p>
              On peut choisir d'exclure tous ceux ne supportant pas les media queries en utilisant comme préfixe de déclaration l'opérateur only.
          </p>
-                     <img alt="medias-queries-exemple-7" src="images/medias-queries-exemple-7.png">
+         <pre><code class="html">&lt;link rel="stylesheet" media="only screen and (color)" href="styles.css" type="text/css"></code></pre>
          <p>
              Le retardataire le plus marquant est encore une fois Internet Explorer. Il existe quelques alternatives en JavaScript néanmoins pour ce navigateur et les plus anciens, telles que des plugins jQuery ou une librairie JavaScript nommée Respond.js  qui apporte un support minimaliste des media queries par la lecture de la feuille de style et des propriétés du document HTML pour IE 6 à 8, Firefox 1 à 3 et Safari 2. 
          </p>           
+        </article>
+        <article class="bordered">
+           <h3>Javascript</h3>
+        
         </article>
       </section>
       <section id="derives" class="top-spacing">
@@ -244,31 +252,31 @@
         <h2>Les frameworks disponibles</h2>
         <article class="bordered">
         <div class="item bordered">           
-        <img src="images/logo/bootstrap_logo.png" class="round_logo">
+        <img alt="bootstrap logo" src="images/logo/bootstrap_logo.png" class="round_logo">
         <p>
         <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> : Proposé par Twitter qui, entre de nombreux composants, propose un système de grid layout.
         </p>
         </div>
         <div class="item bordered">
-        <img src="images/logo/bootstrap_logo.png" class="round_logo">
+        <img alt="starterkit logo"src="images/logo/wsk_logo.png" class="round_logo">
         <p>
         <a href="https://developers.google.com/web/starter-kit/" target="_blank">Web Starter Kit</a> : Un kit de démarrage rapide sorti en 2014 par les équipes Google permettant d’adapter les contenus à tous les périphériques.
         </p>
         </div>
         <div class="item bordered">
-        <img src="images/logo/bootstrap_logo.png" class="round_logo">   
+        <img alt="gumby logo" src="images/logo/gumby_logo.png" class="round_logo">   
         <p>
         <a href="http://gumbyframework.com/" target="_blank">Gumby</a> : Propose un kit complet de composants CSS ainsi qu’un grid layout reponsive très simple.
         </p>
         </div>
         <div class="item bordered">
-        <img src="images/logo/bootstrap_logo.png" class="round_logo">  
+        <img alt="foundation logo" src="images/logo/foundation_logo.png" class="round_logo">  
         <p> 
         <a href="http://foundation.zurb.com/" target="_blank">Foundation</a> : Qu est un framework CSS ultra complet proposant un grid layout responsive et de nombreux composants d’UI.
         </p>
         </div>
         <div class="item bordered">
-                 <img src="images/logo/bootstrap_logo.png" class="round_logo">   
+        <img alt="responsive grid system logo" src="images/logo/rgs_logo.png" class="round_logo">   
         <p>
         <a href="http://www.responsivegridsystem.com/" target="_blank">Responsive Grid System</a> : Ultra léger, Responsive Grid System se présente comme un kit de démarrage rapide groupant des CSS en fonction de vos besoins, ni plus ni moins.
         </p>
