@@ -118,7 +118,9 @@ footer p {
 
 .item
 {
-    max-width: 50%;
+    max-width: 90%;
+    min-height: 180px;
+    max-height: 180px;
     display:inline-block;
 }
 
@@ -147,4 +149,10 @@ footer p {
     border: 2px solid #000;
     display: inline-block;
     
+}
+
+.blue_word
+{
+    color:#3f51b5;
+    font-weight: bold;
 }
