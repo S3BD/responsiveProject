@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  
+  <link rel="shortcut icon" href="images/site-icon.ico">
   <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="css/hybrid.css">
   <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
@@ -213,7 +213,38 @@
         </article>
         <article class="bordered">
            <h3>Javascript</h3>
-        
+        <p>
+            Une autre méthode consiste en l'utilisation du javascript, particulièrement dans le cas des navigateurs qui ne supportent pas entièrement les fonctionnalités apportées par les media queries de CSS3. Ainsi, pour des vieux navigateurs comme IE5+, Firefox 1+ ou encore Safari 2, il existe des bibliothèques Javascript qui permettent le support de ces media queries. Les plus connus sont:
+            <ul>
+                <li>Respond.js</li>
+                <li>CSS3-mediaqueries.js</li>
+                <li>Modernizr.js</li>
+            </ul>
+            
+            <h4>Respond.js</h4>
+            Respond.js est un polyfill (Ensemble de méthodes permettant de simuler des fonctionnalités non disponible nativement) très léger et rapide permettant la prise en charge du responsive design sur les navigateurs ne supportant pas les media queries de CSS3 et particulièrement Internet Explorer 8 et inférieur.
+            Cette bibliothèque a été ecrite en Javascript par Scott Jehl.
+            <br><br>
+            <u> Avantages</u>
+            <ul>
+                <li>Support des media queries min,max et min+max</li>
+                <li>Support des unités px et em</li>
+                <li>Support du redimensionnement de la fenêtre</li>
+                <li>Uniquement pour l'elaboration de feuilles de style externe</li>
+            </ul>
+            <u>Désavantages</u>
+            <ul>
+                <li>Pas de support du media query width</li>
+                <li>Les conditions sur la page directement ne fonctionnent pas (&lt;link media="screen and ..."> ou @import)</li>
+                <li>Problème de conflits sur certaines fonctionnalités avec jQuery</li>
+            </ul>
+            
+            <h4>CSS3-mediaqueries.js</h4>
+            ...
+            
+            <h4>Modernizr.js</h4>
+            ...
+        </p>
         </article>
       </section>
       <section id="derives" class="top-spacing">
