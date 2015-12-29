@@ -100,49 +100,45 @@
             La balise <span class="blue_word">&lt;link></span> est alors dupliquée pour autant de feuilles de style que nécessaire, et comporte un attribut media précisant le contexte dans lequel les styles doivent être appliqués :
         </p>
          <pre><code class="html">&lt;head><br>&lt;meta charset="utf-8"><br>&lt;Media Queries !&lt;/title><br>&lt;link rel="stylesheet" media="screen" href="screen.css" type="text/css"><br>&lt;link rel="stylesheet" media="print" href="print.css" type="text/css"><br>&lt;/head><br>&lt;body><br>...<br>&lt;/body></code></pre>
-         <p>
-             L'attribut media peut prendre (depuis CSS2) les valeurs suivantes :
-             <ul>
-                <li><span class="blue_word">screen</span> : Écrans</li>
-                <li><span class="blue_word">handheld</span> : Périphériques mobiles ou de petite taille</li>
-                <li><span class="blue_word">print</span> : Impression</li>
-                <li><span class="blue_word">aural (CSS 2.0) / speech (CSS 2.1)</span> : Synthèses vocales</li>
-                <li><span class="blue_word">braille</span> : Plages braille</li>
-                <li><span class="blue_word">embossed</span> : Imprimantes braille</li>
-                <li><span class="blue_word">projection</span> : Projecteurs (ou présentations avec slides)</li>
-                <li><span class="blue_word">tty</span> : Terminal/police à pas fixe</li>
-                <li><span class="blue_word">tv</span> : Téléviseur</li>
-                <li><span class="blue_word">all</span> : Tous les précédents</li>
-            </ul>
-            Ces directives peuvent parfaitement être intégrées au sein même d'une feuille de style grâce à une règle <span class="blue_word">@media</span> suivie directement du type. La syntaxe sera alors légèrement différente :
-         </p>
-         <pre><code class="css">@media print{<br> #menu , #footer , #aside {<br>  display:none;<br> }<br> body {<br>  font-size:120%;<br>  color:black;<br> }<br>}</code></pre>
-         <p>
-             Les médias peuvent être très variés, surtout en ce qui concerne les écrans. Tout dépend du support de l'interprétation de ces définitions. Rien n'oblige un périphérique ou un navigateur à appliquer ce qui semblerait le plus indiqué. Par exemple, la règle media <span class="blue_word">handheld</span> est ignorée par la grande majorité des navigateurs mobiles, y compris par Safari Mobile sur iOS qui se considère comme un média <span class="blue_word">screen</span>.
-         </p>
+         <p>L'attribut media peut prendre (depuis CSS2) les valeurs suivantes :</p> 
+        <ul>
+            <li><span class="blue_word">screen</span> : Écrans</li>
+            <li><span class="blue_word">handheld</span> : Périphériques mobiles ou de petite taille</li>
+            <li><span class="blue_word">print</span> : Impression</li>
+            <li><span class="blue_word">aural (CSS 2.0) / speech (CSS 2.1)</span> : Synthèses vocales</li>
+            <li><span class="blue_word">braille</span> : Plages braille</li>
+            <li><span class="blue_word">embossed</span> : Imprimantes braille</li>
+            <li><span class="blue_word">projection</span> : Projecteurs (ou présentations avec slides)</li>
+            <li><span class="blue_word">tty</span> : Terminal/police à pas fixe</li>
+            <li><span class="blue_word">tv</span> : Téléviseur</li>
+            <li><span class="blue_word">all</span> : Tous les précédents</li>
+        </ul>
+        <p>Ces directives peuvent parfaitement être intégrées au sein même d'une feuille de style grâce à une règle <span class="blue_word">@media</span> suivie directement du type. La syntaxe sera alors légèrement différente :</p>
+        <pre><code class="css">@media print{<br> #menu , #footer , #aside {<br>  display:none;<br> }<br> body {<br>  font-size:120%;<br>  color:black;<br> }<br>}</code></pre>
+        <p>
+            Les médias peuvent être très variés, surtout en ce qui concerne les écrans. Tout dépend du support de l'interprétation de ces définitions. Rien n'oblige un périphérique ou un navigateur à appliquer ce qui semblerait le plus indiqué. Par exemple, la règle media <span class="blue_word">handheld</span> est ignorée par la grande majorité des navigateurs mobiles, y compris par Safari Mobile sur iOS qui se considère comme un média <span class="blue_word">screen</span>.
+        </p>
          <h4>Syntaxe des Medias Queries CSS3</h4>
-         <p>
-             La philosophie des Media Queries en CSS3 est d'offrir un panel de critères plus vaste et plus précis, à l'aide de propriétés et de valeurs numériques, ainsi que de combinaisons multiples de ces mêmes critères. Le but est de cibler les périphériques de destination en fonction de leurs capacités.
-             L'écriture de ces requêtes est relativement explicite (en anglais) : une media query est une <strong>expression dont la valeur est toujours vraie ou fausse</strong>. Il suffit d'associer les différentes déclarations possibles avec un opérateur logique pour définir l'ensemble des conditions à réunir pour l'application des styles compris dans le bloc adjacent.
-             Les opérateurs logiques peuvent être :
+            <p>La philosophie des Media Queries en CSS3 est d'offrir un panel de critères plus vaste et plus précis, à l'aide de propriétés et de valeurs numériques, ainsi que de combinaisons multiples de ces mêmes critères. Le but est de cibler les périphériques de destination en fonction de leurs capacités.
+            L'écriture de ces requêtes est relativement explicite (en anglais) : une media query est une <strong>expression dont la valeur est toujours vraie ou fausse</strong>. Il suffit d'associer les différentes déclarations possibles avec un opérateur logique pour définir l'ensemble des conditions à réunir pour l'application des styles compris dans le bloc adjacent.
+            Les opérateurs logiques peuvent être : </p>
             <ul>
-            <li><span class="blue_word">and</span> : "et"</li>
-            <li><span class="blue_word">only</span> : "uniquement"</li>
-            <li><span class="blue_word">not</span> : "non"</li>
+                <li><span class="blue_word">and</span> : "et"</li>
+                <li><span class="blue_word">only</span> : "uniquement"</li>
+                <li><span class="blue_word">not</span> : "non"</li>
             </ul>
-             Pour obtenir l'équivalent du "ou", il suffit d'énumérer différentes media queries à la suite, séparées par des <strong>virgules</strong> : si l'une d'entre elles est valable, alors l'ensemble de la règle sera appliquée.
+             <p>Pour obtenir l'équivalent du "ou", il suffit d'énumérer différentes media queries à la suite, séparées par des <strong>virgules</strong> : si l'une d'entre elles est valable, alors l'ensemble de la règle sera appliquée.
              Les deux exemples suivants ciblent les écrans de largeur inférieure à 640 pixels grâce à la règle <span class="blue_word">max-width</span> associée à la valeur <span class="blue_word">640px</span>.
-         </p>
-         <pre><code class="html">&lt;link rel="stylesheet" media="screen and (max-width: 640px)" href="smallscreen.css" type="text/css"></code></pre>
-         <pre><code class="css">@media screen and (max-width: 640px) {<br> .bloc {<br>  display:block;<br>  clear:both;<br> }<br>}</code></pre>
-         <p>
-             Les combinaisons peuvent être multiples. Ici l'on s'adresse à un écran dont la résolution en largeur est comprise entre 200 et 640 pixels :
-         </p>
-         <pre><code class="css">@media screen and (min-width:200px) and (max-width: 640px) {<br> .bloc {<br>  display:block;<br>  clear:both;<br> }<br>}</code></pre>
-         <h4>Fonctionnalités</h4>
-         <p>
-             La plupart des critères peuvent être préfixés par <span class="blue_word">min-</span> et <span class="blue_word">max-</span> lorsqu'elles acceptent des valeurs numériques pour définir des valeurs minimales ou maximales à respecter.
-             <ul>
+             </p>
+            <pre><code class="html">&lt;link rel="stylesheet" media="screen and (max-width: 640px)" href="smallscreen.css" type="text/css"></code></pre>
+            <pre><code class="css">@media screen and (max-width: 640px) {<br> .bloc {<br>  display:block;<br>  clear:both;<br> }<br>}</code></pre>
+            <p>
+                Les combinaisons peuvent être multiples. Ici l'on s'adresse à un écran dont la résolution en largeur est comprise entre 200 et 640 pixels :
+            </p>
+            <pre><code class="css">@media screen and (min-width:200px) and (max-width: 640px) {<br> .bloc {<br>  display:block;<br>  clear:both;<br> }<br>}</code></pre>
+            <h4>Fonctionnalités</h4>
+            <p>La plupart des critères peuvent être préfixés par <span class="blue_word">min-</span> et <span class="blue_word">max-</span> lorsqu'elles acceptent des valeurs numériques pour définir des valeurs minimales ou maximales à respecter.</p>
+            <ul>
                 <li><span class="blue_word">color</span> :
                 Support de la couleur (bits/pixel)</li>
                 <li><span class="blue_word">color-index</span> :
@@ -169,11 +165,9 @@
                 Type de balayage des téléviseurs (progressive ou interlace)</li>
                 <li><span class="blue_word">width</span> :
                 Dimension en largeur de la zone d'affichage</li>
-             </ul>
-            Les dimensions pourront être évaluées avec des unités (px, em). Les ratios avec des fractions (entier/entier). Une résolution sera définie en dpi (points par pouce) ou en dpcm (points par centimètres).
+            </ul>
+            <p>Les dimensions pourront être évaluées avec des unités (px, em). Les ratios avec des fractions (entier/entier). Une résolution sera définie en dpi (points par pouce) ou en dpcm (points par centimètres).
             Certaines de ces propriétés peuvent être testées d'une façon raccourcie sans valeur, par exemple (<span class="blue_word">color</span>) qui sera équivalent à (<span class="blue_word">min-color: 1</span>) ou considérée comme vraie pour une valeur différente de 0. 
-
-
             Au service des mobiles
             Dans la majorité des cas, on utilise les media queries pour produire des améliorations spécifiques à l'affichage sur les mobiles, qui sont directement concernés par des critères sur les dimensions de l'écran (en terme de résolution et d'espace disponible) et sur l'utilisation tactile. Les périphériques sous iOS (iPhone, iPod, iPad...) supportent relativement bien les media queries.
             Ainsi on retrouvera le plus fréquemment des règles pour :
@@ -183,15 +177,14 @@
             masquer ou afficher des éléments spécifiques
             ajuster les dimensions et marges
             La fonctionnalité <span class="blue_word">orientation</span> a été introduite pour des périphériques pouvant être orientés, par exemple l'iPad. On peut alors déclarer une feuille de style spécifique pour ajuster l'affichage :
-         </p>
-        <pre><code class="html">&lt;link rel="stylesheet" media="(orientation:portrait)" href="portrait.css"><br>&lt;link rel="stylesheet" media="(orientation:landscape)" href="paysage.css"></code></pre>
-         <p>
-             Certains navigateurs classiques l'implémentent également en version bureau et calculent le ratio hauteur/largeur pour simuler un affichage "orienté".
-         </p>
-         <h4>Support et alternatives</h4>
-         <p>
-             Les navigateurs sont inégaux face aux media queries, mais cela tend à s'améliorer.
-             <ul>
+            </p>
+            <pre><code class="html">&lt;link rel="stylesheet" media="(orientation:portrait)" href="portrait.css"><br>&lt;link rel="stylesheet" media="(orientation:landscape)" href="paysage.css"></code></pre>
+            <p>
+                Certains navigateurs classiques l'implémentent également en version bureau et calculent le ratio hauteur/largeur pour simuler un affichage "orienté".
+            </p>
+            <h4>Support et alternatives</h4>
+            <p>Les navigateurs sont inégaux face aux media queries, mais cela tend à s'améliorer.</p>
+            <ul>
                 <li>Mozilla Firefox : 3.5+</li>
                 <li>Internet Explorer : 9+</li>
                 <li>Google Chrome : 5+</li>
@@ -199,32 +192,29 @@
                 <li>Apple Safari : 4+ et iOS (mobile) 3.2+</li>
                 <li>Android : 2.1+</li>
                 <li>WebKit en général</li>
-             </ul>
-            Globalement, si un navigateur ne les supporte pas du tout, il continuera à appliquer la règle concernant le type de média qui figure en début de chaîne.
-         </p>
-         <pre><code class="html">&lt;link rel="stylesheet" media="screen and (max-width: 640px)" href="smallscreen.css" type="text/css"></code></pre>
-         <p>
-             On peut choisir d'exclure tous ceux ne supportant pas les media queries en utilisant comme préfixe de déclaration l'opérateur only.
-         </p>
-         <pre><code class="html">&lt;link rel="stylesheet" media="only screen and (color)" href="styles.css" type="text/css"></code></pre>
-         <p>
-             Le retardataire le plus marquant est encore une fois Internet Explorer. Il existe quelques alternatives en JavaScript néanmoins pour ce navigateur et les plus anciens, telles que des plugins jQuery ou une librairie JavaScript nommée Respond.js  qui apporte un support minimaliste des media queries par la lecture de la feuille de style et des propriétés du document HTML pour IE 6 à 8, Firefox 1 à 3 et Safari 2. 
-         </p>           
+            </ul>
+            <p>Globalement, si un navigateur ne les supporte pas du tout, il continuera à appliquer la règle concernant le type de média qui figure en début de chaîne.</p>
+            <pre><code class="html">&lt;link rel="stylesheet" media="screen and (max-width: 640px)" href="smallscreen.css" type="text/css"></code></pre>
+            <p>
+                On peut choisir d'exclure tous ceux ne supportant pas les media queries en utilisant comme préfixe de déclaration l'opérateur only.
+            </p>
+            <pre><code class="html">&lt;link rel="stylesheet" media="only screen and (color)" href="styles.css" type="text/css"></code></pre>
+            <p>
+                Le retardataire le plus marquant est encore une fois Internet Explorer. Il existe quelques alternatives en JavaScript néanmoins pour ce navigateur et les plus anciens, telles que des plugins jQuery ou une librairie JavaScript nommée Respond.js  qui apporte un support minimaliste des media queries par la lecture de la feuille de style et des propriétés du document HTML pour IE 6 à 8, Firefox 1 à 3 et Safari 2. 
+            </p>           
         </article>
         <article class="bordered">
            <h3>Javascript</h3>
-        <p>
-            Une autre méthode consiste en l'utilisation du javascript, particulièrement dans le cas des navigateurs qui ne supportent pas entièrement les fonctionnalités apportées par les media queries de CSS3. Ainsi, pour des vieux navigateurs comme IE5+, Firefox 1+ ou encore Safari 2, il existe des bibliothèques Javascript qui permettent le support de ces media queries. Les plus connus sont:
-            <ul>
+           <p>Une autre méthode consiste en l'utilisation du javascript, particulièrement dans le cas des navigateurs qui ne supportent pas entièrement les fonctionnalités apportées par les media queries de CSS3. Ainsi, pour des vieux navigateurs comme IE5+, Firefox 1+ ou encore Safari 2, il existe des bibliothèques Javascript qui permettent le support de ces media queries. Les plus connus sont : </p>
+           <ul>
                 <li>Respond.js</li>
                 <li>CSS3-mediaqueries.js</li>
                 <li>Modernizr.js</li>
-            </ul>
+           </ul>
             
             <h4>Respond.js</h4>
-            Respond.js est un polyfill (Ensemble de méthodes permettant de simuler des fonctionnalités non disponible nativement) très léger et rapide permettant la prise en charge du responsive design sur les navigateurs ne supportant pas les media queries de CSS3 et particulièrement Internet Explorer 8 et inférieur.
-            Cette bibliothèque a été ecrite en Javascript par Scott Jehl.
-            <br><br>
+            <p>Respond.js est un polyfill (Ensemble de méthodes permettant de simuler des fonctionnalités non disponible nativement) très léger et rapide permettant la prise en charge du responsive design sur les navigateurs ne supportant pas les media queries de CSS3 et particulièrement Internet Explorer 8 et inférieur.
+            Cette bibliothèque a été ecrite en Javascript par Scott Jehl.</p>
             <u> Avantages</u>
             <ul>
                 <li>Support des media queries min,max et min+max</li>
@@ -244,7 +234,7 @@
             
             <h4>Modernizr.js</h4>
             ...
-        </p>
+        
         </article>
       </section>
       <section id="derives" class="top-spacing">
@@ -289,7 +279,7 @@
         </p>
         </div>
         <div class="item bordered">
-        <img alt="starterkit logo"src="images/logo/wsk_logo.png" class="round_logo">
+        <img alt="starterkit logo" src="images/logo/wsk_logo.png" class="round_logo">
         <p>
         <a href="https://developers.google.com/web/starter-kit/" target="_blank">Web Starter Kit</a> : Un kit de démarrage rapide sorti en 2014 par les équipes Google permettant d’adapter les contenus à tous les périphériques.
         </p>
@@ -338,17 +328,16 @@
           <li><a href="http://blog.lunaweb.fr/interface-flat-design/" target="_blank">Blog LunaWeb - Flat Design</a></li>
           <li><a href="https://www.google.com/design/spec/material-design/introduction.html" target="_blank">Material Design Google</a></li>
           <li><a href="http://www.awwwards.com/what-are-frameworks-22-best-responsive-css-frameworks-for-web-design.html" target="_blank">Awwwards.com / Frameworks CSS</a></li>
-<li><a href="http://www.w3.org/TR/CSS21/media.html" target="_blank">W3C - Media Types</a></li>
-<li><a href="http://www.w3.org/TR/css3-mediaqueries/" target="_blank">W3C - Media Queries</a></li>
-<li><a href="http://www.webdesignerwall.com/tutorials/css3-media-queries/" target="_blank">Web Designer Wall</a></li>
-<li><a href="http://www.alistapart.com/articles/smartphone-browser-landscape/" target="_blank">A list apart</a></li>
-
+          <li><a href="http://www.w3.org/TR/CSS21/media.html" target="_blank">W3C - Media Types</a></li>
+          <li><a href="http://www.w3.org/TR/css3-mediaqueries/" target="_blank">W3C - Media Queries</a></li>
+          <li><a href="http://www.webdesignerwall.com/tutorials/css3-media-queries/" target="_blank">Web Designer Wall</a></li>
+          <li><a href="http://www.alistapart.com/articles/smartphone-browser-landscape/" target="_blank">A list apart</a></li>
         </ul>
         </article>  
       </section>
     </div>
     <footer>
-      <p>©Sébastien Divry & Thomas Cantegrel & Alexandre Maupin - UPJV MIAGE2 2015-2016 - All right reserved</p>
+      <p>© Sébastien Divry & Thomas Cantegrel & Alexandre Maupin - UPJV MIAGE2 2015-2016 - All right reserved</p>
     </footer>
   </core-scaffold>
   
