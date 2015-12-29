@@ -24,6 +24,11 @@ body {
 }
 
 	
+core-scaffold::shadow core-toolbar {
+	background-color: #2F83D0;
+	color: #FFF;
+}
+
 core-scaffold core-toolbar {
 	background-color: #2F83D0;
 	color: #FFF;
