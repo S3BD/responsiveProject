@@ -106,8 +106,8 @@ body .top-spacing {
 }
 
 footer {
-    background-color: #2F83D0;
-      position: fixed;
+      background-color: #2F83D0;
+      position: absolute;
       width: 100%;
 }
 footer p {
