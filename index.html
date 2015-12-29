@@ -86,6 +86,82 @@
       <section id="differentes_techniques" class="top-spacing">
         <h2>Les différentes techniques</h2>
         <article class="bordered">
+          <h3>Tout flexible (Flexible Layout)</h3>
+          <h4>Introduction</h4>
+          <p>
+Il y’a encore quelques années, la flexibilité de la mise en page d’un site était relativement modéré. Ainsi, les seules choses qui étaient flexibles dans un site étaient les « colonnes de mise en page » ou encore le texte. Les images causées la plupart du temps des dégâts et parfois même les éléments dits flexibles en provoquaient également. Il existait alors des modèles plus souples reposant sur des mesures en pixels mais qui ne permettait pas une grande flexibilité entre les différentes résolutions possibles. 
+</p>
+<p>
+Cependant, les choses ont changés et il est désormais possible de rendre tout flexible. Les images peuvent ainsi être automatiquement ajustées, et il existe une pléthore de solutions qui permettent de contourner les dégradations commises par certains éléments de page (au détriment parfois de la lisibilité de ce dit élément).
+</p>
+<p>
+Il ne s’agit pas d’une solution complète mais elle offre énormément d’options. Elle est parfaite pour les appareils qui peuvent passer d’une orientation portrait à une orientation paysage en un instant ou encore lorsque les utilisateurs passent d’un grand écran d’ordinateur à un iPad.
+Ethan Marcotte a créé un exemple de Web Design reposant sur cette méthode de Flexible Layout :
+          </p>
+          <img alt="exemple-flexible-layout-1" src="images/exemple-flexible-layout-1.jpg">
+          <img alt="exemple-flexible-layout-2" src="images/exemple-flexible-layout-2.jpg">
+          <h4>Flexbox</h4>
+          <p>
+              Flexbox ou Flexible Box est un projet de module W3C (actuellement en "Last Call Working Draft" (Brouillon en dernier appel)) qui vise à fournir un moyen plus efficace d'établir, aligner et redistribuer l'espace d'un conteneur dont la taille est inconnue/dynamique (d'où le nom "Flex").
+              
+          </p>
+          <p>
+              L'idée principale de Flexbox est de donner au conteneur la capacité de modifier la largeur/hauteur de ses articles (ainsi que l'ordre) pour remplir au mieux l'espace disponible (dynamique selon la taille d'écran). Le conteneur Flex (flex-container) va elargir pour remplir l'espace libre disponible, ou au contraire le diminuer pour eviter les débordements.
+          </p>
+          <p>
+              L'architecture du modèle FlexBox comprend donc un "conteneur Flex"(flex-container) qui représente le contexte d'affichage ainsi que d'un ou plusieurs "items Flex" (flex-items) qui sont les enfants directs du conteneur. Tout élément HTML peut devenir un conteneur Flex et les autres éléments qu'il peut contenir deviennent automatiquement ses enfants (items Flex).  
+          </p>
+          <pre><code class="css">.container { display: flex; }</code></pre>
+          <pre><code class="css">.container { display: inline-flex; }</code></pre>
+          <p>
+              Un element "flex-item" n'est pas considéré comme un element "block" ou "inline" ainsi des valeurs comme display(autre que none) ou encore float n'ont aucun effet sur lui.
+          </p>
+          <p>
+              Les propriétés du module:
+              <ul>
+                  <li><span class="blue_word">flex-direction</span>: Permet d'établir la direction principal que va suivre les flex-items d'un flex-container. row est la valeur par défaut avec une orientation de gauche à droite, reverse-row offre une direction de droite à gauche, column est pareil que row mais du haut vers le bas, et column-reverse est pareil que row-reverse avec une orientation du bas vers le haut</li>
+                  <li><span class="blue_word">flex-wrap</span>:Directement relié avec la propriété flex-direction, flex-wrap permet de définir la structure du conteneur (ligne unique, multiple lignes, ...). On retrouve les valeurs nowrap(ligne unique),wrap(multi lignes), et wrap-reverse(multi-ligne avec sens inversé)</li>
+                  <li><span class="blue_word">flex-grow</span>: Permet de définir les capacités de grossissement des elements enfants quand de la place est disponible</li>
+                  <li><span class="blue_word">order</span>: Permet de définir l'ordre que prendront les flex-items d'un flex-container</li>
+                  <li><span class="blue_word">flex-shrink</span>:Permet de définir les capacités de retrecissement des elements enfants quand la place est réduite</li>                                                                      
+              </ul>
+          </p>
+          <p>
+              Flexbox est compatible avec la plupart des navigateurs actuels.
+          </p>
+          <img alt="exemple-flexbox" src="images/exemple-flexbox.jpg">
+          <h4>Multi-Column Layout</h4>
+          <p>
+              Proposé par le W3c en Candidate Recommendation depuis 2011, Multi-column Layout permet de créer des colonnes avec des gouttières où le texte peut s'infiltrer pour passer d'une colonne à une autre. L'ensemble repose sur un conteneur global qui peut être tout element HTML. Au sein de ce conteneur est défini un ensemble de colonnes.
+              Les propriétés du module:
+              <ul>
+                  <li><span class="blue_word">column-width</span>: Détermine la largeur des colonnes. La valeur auto permet un ajustement automatique de la largeur.</li>
+                  <li><span class="blue_word">column-count</span>: Détermine le nombre de colonnes.</li>
+                  <li><span class="blue_word">column-gap </span>: Permet de définir la largeur des gouttières.</li>
+                  <li><span class="blue_word">break-before,break-inside,break-after</span>: Permet de définir les sauts de colonnes</li>                                                                   
+              </ul>              
+          </p>
+          <img alt="exemple-flexbox" src="images/exemple-multicolumnlayout.jpg">
+          <pre><code class="css">.container {
+ column-width: 10em ; 
+}
+.container {
+ columns-count: 5;
+ column-gap: 2em;
+}</code></pre>
+          <p>
+              Multi-column layout est compatible avec la plupart des navigateurs actuels.
+          </p>
+          <h4>Grid Layout</h4>
+          <p>
+              ...
+          </p>
+          <h4>Template Layout</h4>
+          <p>
+              ...
+          </p>
+        </article>
+        <article class="bordered">
         <h3>Media Queries</h3>
         <h4>Introduction</h4>
         <p>
@@ -97,7 +173,7 @@
             Avec CSS2 et HTML4, il était déjà possible de spécifier un média de destination pour l'application d'une ou plusieurs feuilles de style.
             La balise <span class="blue_word">&lt;link></span> est alors dupliquée pour autant de feuilles de style que nécessaire, et comporte un attribut media précisant le contexte dans lequel les styles doivent être appliqués :
         </p>
-         <pre><code class="html">&lt;head><br>&lt;meta charset="utf-8"><br>&lt;Media Queries !&lt;/title><br>&lt;link rel="stylesheet" media="screen" href="screen.css" type="text/css"><br>&lt;link rel="stylesheet" media="print" href="print.css" type="text/css"><br>&lt;/head><br>&lt;body><br>...<br>&lt;/body></code></pre>
+         <pre><code class="html">&lt;head><br>&lt;meta charset="utf-8"><br>&lt;title>Media Queries !&lt;/title><br>&lt;link rel="stylesheet" media="screen" href="screen.css" type="text/css"><br>&lt;link rel="stylesheet" media="print" href="print.css" type="text/css"><br>&lt;/head><br>&lt;body><br>...<br>&lt;/body></code></pre>
          <p>L'attribut media peut prendre (depuis CSS2) les valeurs suivantes :</p> 
         <ul>
             <li><span class="blue_word">screen</span> : Écrans</li>
@@ -362,12 +438,20 @@
           <li><a href="https://openclassrooms.com/courses/qu-est-ce-que-le-responsive-web-design" target="_blank">Openclassrooms - Responsive Design</a></li>
           <li><a href="http://wdfriday.com/blog/2012/03/css-et-mobile-first-proceder-par-amelioration-progressive/" target="_blank">Wdfriday.com - Mobile First</a></li>
           <li><a href="http://blog.lunaweb.fr/interface-flat-design/" target="_blank">Blog LunaWeb - Flat Design</a></li>
-          <li><a href="https://www.google.com/design/spec/material-design/introduction.html" target="_blank">Material Design Google</a></li>
+          <li><a href="https://www.google.com/design/spec/material-design/introduction.html" target="_blank">Google.com - Material Design Google</a></li>
           <li><a href="http://www.awwwards.com/what-are-frameworks-22-best-responsive-css-frameworks-for-web-design.html" target="_blank">Awwwards.com / Frameworks CSS</a></li>
           <li><a href="http://www.w3.org/TR/CSS21/media.html" target="_blank">W3C - Media Types</a></li>
           <li><a href="http://www.w3.org/TR/css3-mediaqueries/" target="_blank">W3C - Media Queries</a></li>
-          <li><a href="http://www.webdesignerwall.com/tutorials/css3-media-queries/" target="_blank">Web Designer Wall</a></li>
-          <li><a href="http://www.alistapart.com/articles/smartphone-browser-landscape/" target="_blank">A list apart</a></li>
+          <li><a href="http://www.webdesignerwall.com/tutorials/css3-media-queries/" target="_blank">WebDesignerWall.com - CSS3 Media Queries</a></li>
+          <li><a href="http://www.alistapart.com/articles/smartphone-browser-landscape/" target="_blank">A list apart - Paysage smartphone</a></li>
+          <li><a href="http://www.alsacreations.com/article/lire/1559-responsive-web-design-present-futur-adaptation-mobile.html" target="_blank">Alsacreations.com - Futur de l'adaptation</a></li>
+          <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Css-tricks.com - Guide Flexbox</a></li>
+          <li><a href="http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html" target="_blank">Alsacreations.com - Flexbox Layout Module</a></li>
+          <li><a href="http://www.journaldunet.com/developpeur/client-web/tutoriel-css3-multi-column-layout.shtml" target="_blank">Journaldunet.com - Tutoriel Multi-Column-Layout</a></li>
+          <li><a href="http://www.alsacreations.com/article/lire/1388-css3-grid-layout.html" target="_blank">Alsacreations.com - Grid Layout</a></li>
+          <li><a href="http://www.w3.org/TR/css-template-3/" target="_blank">W3C - Template Layout</a></li>
+          <li><a href="http://jeremie.patonnier.net/post/2009/07/16/CSS-3-Le-module-Template-Layout" target="_blank">Jeremie Patonnier - Template Layout</a></li>
+          <li><a href="http://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/" target="_blank">smashingmagazine.com - Overview Responsive Web Design</a></li>                       
         </ul>
         </article>  
       </section>
