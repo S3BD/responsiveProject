@@ -123,9 +123,7 @@ footer p {
 
 .item
 {
-    max-width: 90%;
-    min-height: 180px;
-    max-height: 180px;
+    max-width: 600px;
     display:inline-block;
 }
 
@@ -139,9 +137,12 @@ footer p {
     background:#c5cae9;
 }
 
-.item p {
-    display: inline-block;
-    max-width: 500px;
+.item-image
+{
+    margin:none;
+    padding:20px;
+    position:inline-block;
+    float:left;
 }
 
 .round_logo
@@ -151,11 +152,15 @@ footer p {
     border-radius: 32px;
     overflow: hidden;
     box-sizing: border-box;
-    border: 2px solid #000;
-    display: inline-block;
-    
+    border: 2px solid #000;    
 }
 
+.item-content
+{
+    margin:none;
+    padding:0;
+    position:inline-block;
+}
 .blue_word
 {
     color:#2F83D0;
