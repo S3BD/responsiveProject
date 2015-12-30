@@ -89,14 +89,14 @@
           <h3>Tout flexible (Flexible Layout)</h3>
           <h4>Introduction</h4>
           <p>
-Il y’a encore quelques années, la flexibilité de la mise en page d’un site était relativement modéré. Ainsi, les seules choses qui étaient flexibles dans un site étaient les « colonnes de mise en page » ou encore le texte. Les images causées la plupart du temps des dégâts et parfois même les éléments dits flexibles en provoquaient également. Il existait alors des modèles plus souples reposant sur des mesures en pixels mais qui ne permettait pas une grande flexibilité entre les différentes résolutions possibles. 
-</p>
-<p>
-Cependant, les choses ont changés et il est désormais possible de rendre tout flexible. Les images peuvent ainsi être automatiquement ajustées, et il existe une pléthore de solutions qui permettent de contourner les dégradations commises par certains éléments de page (au détriment parfois de la lisibilité de ce dit élément).
-</p>
-<p>
-Il ne s’agit pas d’une solution complète mais elle offre énormément d’options. Elle est parfaite pour les appareils qui peuvent passer d’une orientation portrait à une orientation paysage en un instant ou encore lorsque les utilisateurs passent d’un grand écran d’ordinateur à un iPad.
-Ethan Marcotte a créé un exemple de Web Design reposant sur cette méthode de Flexible Layout :
+          Il y a encore quelques années, la flexibilité de la mise en page d’un site était relativement modéré. Ainsi, les seules choses qui étaient flexibles dans un site étaient les « colonnes de mise en page » ou encore le texte. Les images causées la plupart du temps des dégâts et parfois même les éléments dits flexibles en provoquaient également. Il existait alors des modèles plus souples reposant sur des mesures en pixels mais qui ne permettait pas une grande flexibilité entre les différentes résolutions possibles. 
+          </p>
+          <p>
+          Cependant, les choses ont changées et il est désormais possible de rendre tout flexible. Les images peuvent ainsi être automatiquement ajustées, et il existe une pléthore de solutions qui permettent de contourner les dégradations commises par certains éléments de page (au détriment parfois de la lisibilité de ce dit élément).
+          </p>
+          <p>
+          Il ne s’agit pas d’une solution complète mais elle offre énormément d’options. Elle est parfaite pour les appareils qui peuvent passer d’une orientation portrait à une orientation paysage en un instant ou encore lorsque les utilisateurs passent d’un grand écran d’ordinateur à un iPad.
+          Ethan Marcotte a créé un exemple de Web Design reposant sur cette méthode de Flexible Layout :
           </p>
           <img alt="exemple-flexible-layout-1" src="images/exemple-flexible-layout-1.jpg">
           <img alt="exemple-flexible-layout-2" src="images/exemple-flexible-layout-2.jpg">
@@ -132,7 +132,7 @@ Ethan Marcotte a créé un exemple de Web Design reposant sur cette méthode de 
           <img alt="exemple-flexbox" src="images/exemple-flexbox.jpg">
           <h4>Multi-Column Layout</h4>
           <p>
-              Proposé par le W3c en Candidate Recommendation depuis 2011, Multi-column Layout permet de créer des colonnes avec des gouttières où le texte peut s'infiltrer pour passer d'une colonne à une autre. L'ensemble repose sur un conteneur global qui peut être tout element HTML. Au sein de ce conteneur est défini un ensemble de colonnes.
+              Proposé par le W3C en Candidate Recommendation depuis 2011, Multi-column Layout permet de créer des colonnes avec des gouttières où le texte peut s'infiltrer pour passer d'une colonne à une autre. L'ensemble repose sur un conteneur global qui peut être tout element HTML. Au sein de ce conteneur est défini un ensemble de colonnes.
               Les propriétés du module:
               <ul>
                   <li><span class="blue_word">column-width</span>: Détermine la largeur des colonnes. La valeur auto permet un ajustement automatique de la largeur.</li>
@@ -143,12 +143,13 @@ Ethan Marcotte a créé un exemple de Web Design reposant sur cette méthode de 
           </p>
           <img alt="exemple-flexbox" src="images/exemple-multicolumnlayout.jpg">
           <pre><code class="css">.container {
- column-width: 10em ; 
+  column-width: 10em ; 
 }
 .container {
- columns-count: 5;
- column-gap: 2em;
-}</code></pre>
+  columns-count: 5;
+  column-gap: 2em;
+}
+          </code></pre>
           <p>
               Multi-column layout est compatible avec la plupart des navigateurs actuels.
           </p>
@@ -241,9 +242,9 @@ Ethan Marcotte a créé un exemple de Web Design reposant sur cette méthode de 
                 Dimension en largeur de la zone d'affichage</li>
             </ul>
             <p>Les dimensions pourront être évaluées avec des unités (px, em). Les ratios avec des fractions (entier/entier). Une résolution sera définie en dpi (points par pouce) ou en dpcm (points par centimètres).
-            Certaines de ces propriétés peuvent être testées d'une façon raccourcie sans valeur, par exemple (<span class="blue_word">color</span>) qui sera équivalent à (<span class="blue_word">min-color: 1</span>) ou considérée comme vraie pour une valeur différente de 0. 
-            Au service des mobiles
-            Dans la majorité des cas, on utilise les media queries pour produire des améliorations spécifiques à l'affichage sur les mobiles, qui sont directement concernés par des critères sur les dimensions de l'écran (en terme de résolution et d'espace disponible) et sur l'utilisation tactile. Les périphériques sous iOS (iPhone, iPod, iPad...) supportent relativement bien les media queries.
+            Certaines de ces propriétés peuvent être testées d'une façon raccourcie sans valeur, par exemple (<span class="blue_word">color</span>) qui sera équivalent à (<span class="blue_word">min-color: 1</span>) ou considérée comme vraie pour une valeur différente de 0.</p>
+            <h4>Au service des mobiles</h4>
+            <p>Dans la majorité des cas, on utilise les media queries pour produire des améliorations spécifiques à l'affichage sur les mobiles, qui sont directement concernés par des critères sur les dimensions de l'écran (en terme de résolution et d'espace disponible) et sur l'utilisation tactile. Les périphériques sous iOS (iPhone, iPod, iPad...) supportent relativement bien les media queries.
             Ainsi on retrouvera le plus fréquemment des règles pour :
             agrandir la taille du texte
             agrandir la taille des contrôles et zones cliquables (pour une utilisation au doigt)
@@ -320,7 +321,7 @@ Ethan Marcotte a créé un exemple de Web Design reposant sur cette méthode de 
             </ul>
           
             <h4>Modernizr.js</h4>
-            <p>Modernizr est une bibliothèque JavaScript qui vous permet de communiquer avec le navigateur de la manière suivante :<p>
+            <p>Modernizr est une bibliothèque JavaScript qui permet de communiquer avec le navigateur de la manière suivante :<p>
             <ol>
                 <li>La bibliothèque demande au navigateur s’il reconnait et supporte la fonctionnalité.</li>
                 <li>Ensuite elle ne fait rien si le navigateur connait et supporte la fonctionnalité.</li>
@@ -335,10 +336,10 @@ Ethan Marcotte a créé un exemple de Web Design reposant sur cette méthode de 
           <h3>Flat Design</h3>
           <img alt="windows8flat-design" class="left redimension_gauche" src="images/windows8flat-design.jpg">
           <p>
-            Le Flat Design est une association de termes par rapport à une tendance. Si on traduit littéralement le terme « Flat Design« , on pourrait avoir une phrase du genre « Design à Plat ». Le Flat Design est un style de design web excluant tous détails superflus de la création. Il se caractérise par des aplats de couleurs sobres mais actuelles et dont l’organisation de la typographie créée la structure du contenu. Le Flat design est un style minimaliste, extrêmement clair et épuré. « Less is more » prend ici tout son sens.
+            Le Flat Design est une association de termes par rapport à une tendance. On pourrait traduire littérallement le terme « Flat Design » par « Design à Plat » en français. Le Flat Design est un style de design web excluant tous détails superflus de la création. Il se caractérise par des aplats de couleurs sobres mais actuelles et dont l’organisation de la typographie créée la structure du contenu. Le Flat design est un style minimaliste, extrêmement clair et épuré. « Less is more » prend ici tout son sens.
           </p>
           <p>
-            Ce design est de plus en plus utilisé et il a notamment commencé à faire son apparation sur Windows avec la sortie de Windows 8. En effet, chaque élément est représenté sous la forme de "tuiles" et il n'y a aucun reflief ou ombres.
+            Ce design est de plus en plus utilisé et il a notamment commencé à faire son apparation sur Windows avec la sortie de Windows 8. En effet, chaque élément est représenté sous la forme de « tuiles » et il n'y a aucun reflief ou ombres.
           </p>
           <p>
             Ce courant est donc à l'opposé du <strong>skeuomorphisme</strong>. En design graphique, ce mot désigne le fait de réutiliser l’apparence d’un objet familier pour un objet virtuel, qui remplit la même fonction, afin de rendre son utilisation totalement intuitive.
@@ -348,7 +349,7 @@ Ethan Marcotte a créé un exemple de Web Design reposant sur cette méthode de 
           <h3>Material Design</h3>
           <img alt="MTI5MDIzOTE2MTIyNTU2NDI2" class="right redimension_droite" src="images/MTI5MDIzOTE2MTIyNTU2NDI2.gif">
           <p>
-            Le Material Design est un ensemble de règles de design proposées par Google et qui s'appliquent à l'interface graphique des logiciels et applications. Le Material Design est un dérivé du Flat Design, il garde donc certains principes du Flat Design tout  en y ajoutant quelques ajouts.
+            Le Material Design est un ensemble de règles de design proposées par Google et qui s'appliquent à l'interface graphique des logiciels et applications. Le Material Design est un dérivé du Flat Design, il garde donc certains principes du Flat Design tout  en y apportant quelques ajouts.
           </p>
           <p>
             Premièrement, le Material Design ajoute une dimension verticale supplémentaire. Comme on peut le voir sur le gif par exemple avec le bouton "+" qui est positionné sur un autre composant. Cela apporte une vraie profondeur au design des applications ou sites web.
@@ -427,7 +428,7 @@ Ethan Marcotte a créé un exemple de Web Design reposant sur cette méthode de 
           Nous avons choisi ce framework car il permet d'appliquer les règles du Material Design dans une application web et que l'approche des web components nous semble très intéressante.
         </p>
         <p>
-          En effet, chaque web component est indépendant et est du coup facilement réutilisable tout au long du développement d’une application. Cette nouvelle technologie évite donc les répétitions et permet de gagner du temps.
+          En effet, chaque web component est indépendant et donc facilement réutilisable tout au long du développement d’une application. Cette nouvelle technologie évite donc les répétitions et permet de gagner du temps.
         </p>
         </article>
       </section>
