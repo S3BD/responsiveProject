@@ -34,7 +34,7 @@
         <core-item icon="hardware:phonelink" label="Les différentes approches"><a href="#differentes_approches"></a></core-item>
         <core-item icon="settings" label="Les différentes techniques"><a href="#differentes_techniques"></a></core-item>
         <core-item icon="trending-up" label="Les dérivés"><a href="#derives"></a></core-item>
-        <core-item icon="work" label="Les frameworks"><a href="#framework"></a></core-item>
+        <core-item icon="work" label="Quelques frameworks"><a href="#framework"></a></core-item>
         <core-item icon="polymer" label="A propos du site"><a href="#a_propos"></a></core-item>
         <core-item icon="stars" label="Sources"><a href="#sources"></a></core-item>
       </core-menu>
@@ -86,10 +86,10 @@
       <section id="differentes_techniques" class="top-spacing">
         <h2>Les différentes techniques</h2>
         <article class="bordered">
-          <h3>Tout flexible (Flexible Layout)</h3>
+          <h3>Tout en pourcentage, tout flexible (Flexible Layout ou encore Liquid Layout)</h3>
           <h4>Introduction</h4>
           <p>
-          Il y a encore quelques années, la flexibilité de la mise en page d’un site était relativement modéré. Ainsi, les seules choses qui étaient flexibles dans un site étaient les « colonnes de mise en page » ou encore le texte. Les images causées la plupart du temps des dégâts et parfois même les éléments dits flexibles en provoquaient également. Il existait alors des modèles plus souples reposant sur des mesures en pixels mais qui ne permettait pas une grande flexibilité entre les différentes résolutions possibles. 
+          Il y a encore quelques années, la flexibilité de la mise en page d’un site était relativement modérée. Ainsi, les seules choses qui étaient flexibles dans un site étaient les « colonnes de mise en page » ou encore le texte. Les images causées la plupart du temps des dégâts et parfois même les éléments dits flexibles en provoquaient également. Il existait alors des modèles plus souples reposant sur des mesures en pixels mais qui ne permettait pas une grande flexibilité entre les différentes résolutions possibles. 
           </p>
           <p>
           Cependant, les choses ont changées et il est désormais possible de rendre tout flexible. Les images peuvent ainsi être automatiquement ajustées, et il existe une pléthore de solutions qui permettent de contourner les dégradations commises par certains éléments de page (au détriment parfois de la lisibilité de ce dit élément).
@@ -100,92 +100,27 @@
           </p>
           <img alt="exemple-flexible-layout-1" src="images/exemple-flexible-layout-1.jpg">
           <img alt="exemple-flexible-layout-2" src="images/exemple-flexible-layout-2.jpg">
-          <h4>Flexbox</h4>
           <p>
-              Flexbox ou Flexible Box est un projet de module W3C (actuellement en "Last Call Working Draft" (Brouillon en dernier appel)) qui vise à fournir un moyen plus efficace d'établir, aligner et redistribuer l'espace d'un conteneur dont la taille est inconnue/dynamique (d'où le nom "Flex").
-              
+          Ici la dégradation (image tronquée) est assumée et ne fait pas obstacle à l'expérience utilisateur. La police d'écriture est définie avec une unité qui s'adapte selon la résolution de l'écran. La mise en page repose sur des propriétés basiques.
           </p>
-          <p>
-              L'idée principale de Flexbox est de donner au conteneur la capacité de modifier la largeur/hauteur de ses articles (ainsi que l'ordre) pour remplir au mieux l'espace disponible (dynamique selon la taille d'écran). Le conteneur Flex (flex-container) va elargir pour remplir l'espace libre disponible, ou au contraire le diminuer pour eviter les débordements.
-          </p>
-          <p>
-              L'architecture du modèle FlexBox comprend donc un "conteneur Flex"(flex-container) qui représente le contexte d'affichage ainsi que d'un ou plusieurs "items Flex" (flex-items) qui sont les enfants directs du conteneur. Tout élément HTML peut devenir un conteneur Flex et les autres éléments qu'il peut contenir deviennent automatiquement ses enfants (items Flex).  
-          </p>
-          <pre><code class="css">.container { display: flex; }</code></pre>
-          <pre><code class="css">.container { display: inline-flex; }</code></pre>
-          <p>
-              Un element "flex-item" n'est pas considéré comme un element "block" ou "inline" ainsi des valeurs comme display(autre que none) ou encore float n'ont aucun effet sur lui.
-          </p>
-          <p>
-              Les propriétés du module:
-              <ul>
-                  <li><span class="blue_word">flex-direction</span>: Permet d'établir la direction principal que va suivre les flex-items d'un flex-container. row est la valeur par défaut avec une orientation de gauche à droite, reverse-row offre une direction de droite à gauche, column est pareil que row mais du haut vers le bas, et column-reverse est pareil que row-reverse avec une orientation du bas vers le haut</li>
-                  <li><span class="blue_word">flex-wrap</span>:Directement relié avec la propriété flex-direction, flex-wrap permet de définir la structure du conteneur (ligne unique, multiple lignes, ...). On retrouve les valeurs nowrap(ligne unique),wrap(multi lignes), et wrap-reverse(multi-ligne avec sens inversé)</li>
-                  <li><span class="blue_word">flex-grow</span>: Permet de définir les capacités de grossissement des elements enfants quand de la place est disponible</li>
-                  <li><span class="blue_word">order</span>: Permet de définir l'ordre que prendront les flex-items d'un flex-container</li>
-                  <li><span class="blue_word">flex-shrink</span>:Permet de définir les capacités de retrecissement des elements enfants quand la place est réduite</li>                                                                      
-              </ul>
-          </p>
-          <p>
-              Flexbox est compatible avec la plupart des navigateurs actuels.
-          </p>
-          <img alt="exemple-flexbox" src="images/exemple-flexbox.jpg">
-          <h4>Multi-Column Layout</h4>
-          <p>
-              Proposé par le W3C en Candidate Recommendation depuis 2011, Multi-column Layout permet de créer des colonnes avec des gouttières où le texte peut s'infiltrer pour passer d'une colonne à une autre. L'ensemble repose sur un conteneur global qui peut être tout element HTML. Au sein de ce conteneur est défini un ensemble de colonnes.
-              Les propriétés du module:
-              <ul>
-                  <li><span class="blue_word">column-width</span>: Détermine la largeur des colonnes. La valeur auto permet un ajustement automatique de la largeur.</li>
-                  <li><span class="blue_word">column-count</span>: Détermine le nombre de colonnes.</li>
-                  <li><span class="blue_word">column-gap </span>: Permet de définir la largeur des gouttières.</li>
-                  <li><span class="blue_word">break-before,break-inside,break-after</span>: Permet de définir les sauts de colonnes</li>                                                                   
-              </ul>              
-          </p>
-          <img alt="exemple-flexbox" src="images/exemple-multicolumnlayout.jpg">
-          <pre><code class="css">.container {
-  column-width: 10em ; 
+          <pre><code class="css">body { 
+    font-size: 1em;
 }
-.container {
-  columns-count: 5;
-  column-gap: 2em;
+
+#header {
+    font-size: 5%;
+}
+
+#content {
+    font-size:x-small;
 }
           </code></pre>
-          <p>
-              Multi-column layout est compatible avec la plupart des navigateurs actuels.
-          </p>
-          <h4>Grid Layout</h4>
-          <p>Le module de positionnement "Grid Layout" est aussi une spécification W3C à l'état de brouillon.</p>
-          <p>Le principe de ce module est de diviser virtuellement l'espace d'une page en plusieurs zones sous forme de lignes et de colonnes. On se retrouve donc avec un système de grille permettant de placer nos éléments.
-            Néanmoins, cette notion de grille n'est qu'une construction de l'esprit pour l'utilisateur, cela ne nécessite aucune balises HTML spécifique pour la mettre en place.</p>
-            <p>Les propriétés du module:
-              <ul>
-                  <li><span class="blue_word">grid, inline-grid</span>: Déclaration d'un contexte de grille (création d'un "grid-container").</li>
-                  <li><span class="blue_word">grid-template-areas</span>: Déclaration d'un "canevas" de cellules nommées.</li>
-                  <li><span class="blue_word">grid-template-rows, grid-template-columns</span>: Déclaration des dimensions de lignes et colonnes.</li>
-                  <li><span class="blue_word">grid-row, grid-column</span>: Placement d'un élément "grid-item" dans une ligne ou une colonne</li>
-                  <li><span class="blue_word">grid-gap, grid-column-gap, grid-row-gap</span>: Espaces inter-colonnes ou inter-rangées (gouttières).</li>
-                  <li><span class="blue_word">align-items, justify-items</span>: Alignement horizontal ou vertical.</li>
-                  <li><span class="blue_word">align-self, justify-self</span>: Alignement horizontal ou vertical d'éléments distincts</li>                                                                      
-              </ul>
-            </p>
-            <pre><code class="css">body {
-  display: grid;
-  grid-template-columns: 200px 400px;
-}
-#texte {
-  grid-column: 1; /* placement en colonne 1 */
-}
-#image {
-  grid-column: 2; /* placement en colonne 2 */
-}
-            </code></pre>
-            <p>Le CSS ci-dessus permettra par exemple, d'aligner sur la même ligne, les deux div ayant les id "texte" et "image" à l'intérieur du body.</p>
-            <p>Néanmoins, la grosse faiblesse de ce module pour l'instant et qu'il n'est supporté nativement que par IE 10+. Concernant Chrome, Firefox et Opera, il est nécessaire d'activter un flag dans les paramètres du navigateur.</p>
-            
-          <h4>Template Layout</h4>
-          <p>
-              ...
-          </p>
+          <h4>Concept</h4>
+          <p>Le principe du Liquid Layout/Flexible layout repose sur une mise en page entièrement définie en pourcentage. Ainsi la mise en page s'adapte à la taille de la fenêtre même quand l'utilisateur réduit la taille de son navigateur. Il s'agit d'une technique basique dont les possibilités restent limitées. Cette méthode s'applique parfaitement pour les design simples et a l'avantage d'être compatible avec l'ensemble des navigateurs.</p>
+          <h4>Images flexibles</h4>
+          <p>L'un des problèmes majeur du responsive design est la complexité de travailler avec des images, mais encore une fois en se reposant sur le liquid layout et l'utilisation des pourcentages, il est possible d'afficher des images qui se redimensionneront selon la taille de la fenêtre. </p>
+                  <pre><code class="css">img { max-width: 100%; }</code></pre>
+          <p>La flexibilité des images repose sur la capacité du navigateur à redimensionner lorsqu'il en a besoin. La propriété max-width permet au navigateur de redimensionner en respectant les proportions. Cette solution est efficace, mais ne prend pas en compte la lourdeur des images. Ainsi, peut importe que l'image ait été prévu pour une grosse résolution, son poids ne variera pas sur une résolution inférieure.</p>
         </article>
         <article class="bordered">
         <h3>Media Queries</h3>
@@ -320,7 +255,7 @@
                 <li>Support des media queries min,max et min+max</li>
                 <li>Support des unités px et em</li>
                 <li>Support du redimensionnement de la fenêtre</li>
-                <li>Uniquement pour l'elaboration de feuilles de style externe</li>
+                <li>Uniquement pour l'élaboration de feuilles de style externe</li>
             </ul>
             <u>Désavantages</u>
             <ul>
@@ -354,6 +289,125 @@
             </ol>
             <p>Modernizr n’ajoute pas de fonctionnalités aux navigateurs. Il indique simplement si oui ou non le navigateur prend en charge la fonctionnalité en question. Cela permet d’expérimenter avec le HTML5 et le CSS3 de nouvelles fonctionnalités sans se soucier de la compatibilité avec les nouveaux navigateurs.</p>
         </article>
+        <article class="bordered">
+            <h3>Des solutions CSS3 pas encore standardisées</h3>
+                      <h4>Flexbox</h4>
+          <p>
+              Flexbox ou Flexible Box est un projet de module W3C (actuellement en "Last Call Working Draft" (Brouillon en dernier appel)) qui vise à fournir un moyen plus efficace d'établir, aligner et redistribuer l'espace d'un conteneur dont la taille est inconnue/dynamique (d'où le nom "Flex").
+              
+          </p>
+          <p>
+              L'idée principale de Flexbox est de donner au conteneur la capacité de modifier la largeur/hauteur de ses articles (ainsi que l'ordre) pour remplir au mieux l'espace disponible (dynamique selon la taille d'écran). Le conteneur Flex (flex-container) va elargir pour remplir l'espace libre disponible, ou au contraire le diminuer pour eviter les débordements.
+          </p>
+          <p>
+              L'architecture du modèle FlexBox comprend donc un "conteneur Flex"(flex-container) qui représente le contexte d'affichage ainsi que d'un ou plusieurs "items Flex" (flex-items) qui sont les enfants directs du conteneur. Tout élément HTML peut devenir un conteneur Flex et les autres éléments qu'il peut contenir deviennent automatiquement ses enfants (items Flex).  
+          </p>
+          <pre><code class="css">.container { display: flex; }</code></pre>
+          <pre><code class="css">.container { display: inline-flex; }</code></pre>
+          <p>
+              Un élément "flex-item" n'est pas considéré comme un élément "block" ou "inline" ainsi des valeurs comme display(autre que none) ou encore float n'ont aucun effet sur lui.
+          </p>
+          <p>
+              Les propriétés du module:
+              <ul>
+                  <li><span class="blue_word">flex-direction</span>: Permet d'établir la direction principal que va suivre les flex-items d'un flex-container. row est la valeur par défaut avec une orientation de gauche à droite, reverse-row offre une direction de droite à gauche, column est pareil que row mais du haut vers le bas, et column-reverse est pareil que row-reverse avec une orientation du bas vers le haut</li>
+                  <li><span class="blue_word">flex-wrap</span>:Directement relié avec la propriété flex-direction, flex-wrap permet de définir la structure du conteneur (ligne unique, multiple lignes, ...). On retrouve les valeurs nowrap(ligne unique),wrap(multi lignes), et wrap-reverse(multi-ligne avec sens inversé)</li>
+                  <li><span class="blue_word">flex-grow</span>: Permet de définir les capacités de grossissement des éléments enfants quand de la place est disponible</li>
+                  <li><span class="blue_word">order</span>: Permet de définir l'ordre que prendront les flex-items d'un flex-container</li>
+                  <li><span class="blue_word">flex-shrink</span>:Permet de définir les capacités de retrecissement des elements enfants quand la place est réduite</li>                                                                      
+              </ul>
+          </p>
+          <p>
+              Flexbox est compatible avec la plupart des navigateurs actuels.
+          </p>
+          <img alt="exemple-flexbox" src="images/exemple-flexbox.jpg">
+          <h4>Multi-Column Layout</h4>
+          <p>
+              Proposé par le W3C en Candidate Recommendation depuis 2011, Multi-column Layout permet de créer des colonnes avec des gouttières où le texte peut s'infiltrer pour passer d'une colonne à une autre. L'ensemble repose sur un conteneur global qui peut être tout element HTML. Au sein de ce conteneur est défini un ensemble de colonnes.
+              Les propriétés du module:
+              <ul>
+                  <li><span class="blue_word">column-width</span>: Détermine la largeur des colonnes. La valeur auto permet un ajustement automatique de la largeur.</li>
+                  <li><span class="blue_word">column-count</span>: Détermine le nombre de colonnes.</li>
+                  <li><span class="blue_word">column-gap </span>: Permet de définir la largeur des gouttières.</li>
+                  <li><span class="blue_word">break-before,break-inside,break-after</span>: Permet de définir les sauts de colonnes</li>                                                                   
+              </ul>              
+          </p>
+          <img alt="exemple-multicolumnlayout" src="images/exemple-multicolumnlayout.jpg">
+          <pre><code class="css">.container {
+  column-width: 10em ; 
+}
+.container {
+  columns-count: 5;
+  column-gap: 2em;
+}
+          </code></pre>
+          <p>
+              Multi-column layout est compatible avec la plupart des navigateurs actuels.
+          </p>
+          <h4>Grid Layout</h4>
+          <p>Le module de positionnement "Grid Layout" est aussi une spécification W3C à l'état de brouillon.</p>
+          <p>Le principe de ce module est de diviser virtuellement l'espace d'une page en plusieurs zones sous forme de lignes et de colonnes. On se retrouve donc avec un système de grille permettant de placer nos éléments.
+            Néanmoins, cette notion de grille n'est qu'une construction de l'esprit pour l'utilisateur, cela ne nécessite aucune balises HTML spécifique pour la mettre en place.</p>
+            <p>Les propriétés du module:
+              <ul>
+                  <li><span class="blue_word">grid, inline-grid</span>: Déclaration d'un contexte de grille (création d'un "grid-container").</li>
+                  <li><span class="blue_word">grid-template-areas</span>: Déclaration d'un "canevas" de cellules nommées.</li>
+                  <li><span class="blue_word">grid-template-rows, grid-template-columns</span>: Déclaration des dimensions de lignes et colonnes.</li>
+                  <li><span class="blue_word">grid-row, grid-column</span>: Placement d'un élément "grid-item" dans une ligne ou une colonne</li>
+                  <li><span class="blue_word">grid-gap, grid-column-gap, grid-row-gap</span>: Espaces inter-colonnes ou inter-rangées (gouttières).</li>
+                  <li><span class="blue_word">align-items, justify-items</span>: Alignement horizontal ou vertical.</li>
+                  <li><span class="blue_word">align-self, justify-self</span>: Alignement horizontal ou vertical d'éléments distincts</li>                                                                      
+              </ul>
+            </p>
+            <pre><code class="css">body {
+  display: grid;
+  grid-template-columns: 200px 400px;
+}
+#texte {
+  grid-column: 1; /* placement en colonne 1 */
+}
+#image {
+  grid-column: 2; /* placement en colonne 2 */
+}
+            </code></pre>
+            <p>Le CSS ci-dessus permettra par exemple, d'aligner sur la même ligne, les deux div ayant les id "texte" et "image" à l'intérieur du body.</p>
+            <p>Néanmoins, la grosse faiblesse de ce module pour l'instant et qu'il n'est supporté nativement que par IE 10+. Concernant Chrome, Firefox et Opera, il est nécessaire d'activer un flag dans les paramètres du navigateur.</p>
+                   <img alt="exemple-gridlayout" src="images/exemple-grid-layout.png">   
+          <h4>Template Layout</h4>
+          <p>
+              Présenté comme le rêve des designers, Template Layout est un module encore à l'état de brouillon qui offre un systeme de mise en page indépendant du flux de la source HTML. Globalement, le module repose sur une grille de positionnement défini par la propriété display. Sa particularité c'est qu'il repose entièrement sur des lettres réparties sur plusieurs lignes qui permettent de définir le gabarit d'une page. Ainsi, chaque lettre représente une lettre (ou Slot en anglais) où l'on pourra insérer tout élément HTML.
+          </p>
+          <pre><code class="css">body{
+    display : "aa"
+              "bc"
+              "dd";
+}</code></pre>
+<p>
+    Si la propriété <span class="blue_word">display</span> permet de définir le positionnement, il reste encore à assigner des elements HTML. Pour ce faire, on utilise la propriété <span class="blue_word">position</span> afin d'affecter un élément à une position.
+    </p>
+              <pre><code class="css">#header { position : a ; }
+#footer { position : d ; }
+#content{ position : b ; }
+#sidebar{ position : c ; }</code></pre>
+        <p>
+            Concrètement, la propriété <span class="blue_word">display</span> permet de définir un Template via des lettres et <span class="blue_word">position</span> permet d'affecter à ces lettres, des éléments HTML. Le flux n'est pas complétement ignoré mais il est possible de le faire assez simplement.
+        </p>
+                      <pre><code class="css">#header { position : a ; }
+#content{ position : b ; }
+#content > h2 { position : a ; }</code></pre>
+<p>
+    Dans cette exemple, on remarque que <span class="blue_word">#header</span> est en <span class="blue_word">position a</span> et <span class="blue_word">#content</span> en <span class="blue_word">position b</span>. Logiquement, les balises <span class="blue_word">h2</span> de la div <span class="blue_word">#content</span> devrait être positionné au sein de celle-ci mais ici on indique que les balises <span class="blue_word">h2</span> doivent être placé dans la div <span class="blue_word">#header</span>. Le flux HTML est donc ignoré car <span class="blue_word">h2</span> se positionne dans <span class="blue_word">#header</span> et non <span class="blue_word">#content</span>.
+    </p>
+<pre><code class="css">body{
+    display : ".  a    a   ."  /100px
+              ".  b    c   ."
+              ".  d    d   ."  /2em
+               * 50% 150px *;
+}</code></pre>
+<p>
+    L'exemple ci-dessus est un gabarit complet avec personnalisation des différents blocs. On remarque rapidement les limites d'une telle utilisation. De plus, aucun navigateur n'a choisi d'implémenter actuellement cette méthode (même à titre expérimental). Quelques développeurs ont tenté de reproduire le comportement du template layout en Javascript mais aucune solution n'est encore viable.
+</p>
+        </article>
       </section>
       <section id="derives" class="top-spacing">
         <h2>Les dérivés du Responsive Design</h2>
@@ -361,7 +415,7 @@
           <h3>Flat Design</h3>
           <img alt="windows8flat-design" class="left redimension_gauche" src="images/windows8flat-design.jpg">
           <p>
-            Le Flat Design est une association de termes par rapport à une tendance. On pourrait traduire littérallement le terme « Flat Design » par « Design à Plat » en français. Le Flat Design est un style de design web excluant tous détails superflus de la création. Il se caractérise par des aplats de couleurs sobres mais actuelles et dont l’organisation de la typographie créée la structure du contenu. Le Flat design est un style minimaliste, extrêmement clair et épuré. « Less is more » prend ici tout son sens.
+            Le Flat Design est une association de termes par rapport à une tendance. On pourrait traduire littéralement le terme « Flat Design » par « Design à Plat » en français. Le Flat Design est un style de design web excluant tous détails superflus de la création. Il se caractérise par des aplats de couleurs sobres mais actuelles et dont l’organisation de la typographie créée la structure du contenu. Le Flat design est un style minimaliste, extrêmement clair et épuré. « Less is more » prend ici tout son sens.
           </p>
           <p>
             Ce design est de plus en plus utilisé et il a notamment commencé à faire son apparation sur Windows avec la sortie de Windows 8. En effet, chaque élément est représenté sous la forme de « tuiles » et il n'y a aucun reflief ou ombres.
@@ -369,6 +423,13 @@
           <p>
             Ce courant est donc à l'opposé du <strong>skeuomorphisme</strong>. En design graphique, ce mot désigne le fait de réutiliser l’apparence d’un objet familier pour un objet virtuel, qui remplit la même fonction, afin de rendre son utilisation totalement intuitive.
           </p>
+          <div horizontal center-justified layout style="clear:both;">
+              <div>
+          <img alt="exemple-flat-design-1" src="images/exemple-flat-design.png">
+          <img alt="exemple-flat-design-2" src="images/exemple-flat-design-2.jpg">
+          <img alt="exemple-flat-design-3" src="images/exemple-flat-design-3.jpg">
+              </div>
+          </div>
         </article>
         <article class="bordered">
           <h3>Material Design</h3>
@@ -385,10 +446,17 @@
           <p>
             Pour finir, le Material Design a été introduit avec la version 5.0 de l'OS mobile Android et il est depuis utilisé sur de nombreuses applications disponibles sur le marché.
           </p>
+          <div horizontal center-justified layout style="clear:both;">
+              <div>
+          <img alt="exemple-material-design-1" src="images/exemple-material-design.png">
+          <img alt="exemple-material-design-2" src="images/exemple-material-design-2.png" style="width:220px;">
+          <img alt="exemple-material-design-3" src="images/exemple-material-design-3.jpg">
+              </div>
+          </div>
         </article>  
       </section>
       <section id="framework" class="top-spacing">
-        <h2>Les frameworks disponibles</h2>
+        <h2>Quelques frameworks disponibles</h2>
         <article class="bordered">
         <div class="item bordered">
         <div class="item-image">           
@@ -426,7 +494,7 @@
         </div>
         <div class="item-content">   
         <p> 
-        <a href="http://foundation.zurb.com/" target="_blank">Foundation</a> : Qu est un framework CSS ultra complet proposant un grid layout responsive et de nombreux composants d’UI.
+        <a href="http://foundation.zurb.com/" target="_blank">Foundation</a> : Framework CSS ultra complet proposant un grid layout responsive et de nombreux composants d’UI.
         </p>
         </div>
         </div>
@@ -440,12 +508,52 @@
         </p>
         </div>
         </div>
+         <div class="item bordered">
+        <div class="item-image">
+        <img alt="skeleton logo" src="images/logo/skeleton_logo.png" class="round_logo">
+        </div>
+        <div class="item-content">   
+        <p>
+        <a href="http://getskeleton.com/" target="_blank">Skeleton</a> : Framework minimaliste qui repose egalement sur un système de grid et fournit egalement de nombreux éléments responsive.
+        </p>
+        </div>
+        </div>
+        <div class="item bordered">
+        <div class="item-image">
+        <img alt="pure logo" src="images/logo/pure_logo.png" class="round_logo">
+        </div>
+        <div class="item-content">   
+        <p>
+        <a href="http://purecss.io/" target="_blank">Pure.css</a> : Framework extremement léger (4KB) réalisé par l'entreprise Yahoo en suivant l'approche mobile first. Mélange astucieux de media queries et d'un système de grille.
+        </p>
+        </div>
+        </div>
+        <div class="item bordered">
+        <div class="item-image">
+        <img alt="less logo" src="images/logo/less-logo.jpg" class="round_logo">
+        </div>
+        <div class="item-content">   
+        <p>
+        <a href="http://lessframework.com/" target="_blank">Less Framework</a> : Framework basique qui fournit un système de grille simple sans fioritures. Il est l'un des premiers framework css à s'être orienté vers le responsive design.
+        </p>
+        </div>
+        </div>
+        <div class="item bordered">
+        <div class="item-image">
+        <img alt="yaml logo" src="images/logo/yaml-logo.jpg" class="round_logo">
+        </div>
+        <div class="item-content">   
+        <p>
+        <a href="http://www.yaml.de/" target="_blank">YAML 4</a> : Framework complet, accessible et modulable qui existe depuis 2005. On peut le retrouver en complement d'autres frameworks comme symfony.
+        </p>
+        </div>
+        </div>
         </article>
       </section>
       <section id="a_propos" class="top-spacing">
         <h2>A propos du site</h2>
         <article class="bordered">
-        <p>Pour réaliser ce site de présentation sur le Responsive Design, nous avons décidé d'utiliser le framework <strong>Polymer</strong>, développé par Google.</p>
+        <p>Pour réaliser ce site de présentation sur le Responsive Design, nous avons décidé d'utiliser le Framework <strong>Polymer</strong>, développé par Google.</p>
         <p>
           Polymer permet de découper une application web en plusieurs morceaux (composants), indépendants, qui contiennent le code HTML (structure), le style CSS et le code Javascript (intelligence du composant). Un composant peut par exemple être un menu, un bouton ou encore un widget Twitter. Il existe un ensemble de composants Polymer préexistants qui permettent de gagner du temps pour démarrer une application web.
         </p>
