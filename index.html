@@ -154,9 +154,34 @@
               Multi-column layout est compatible avec la plupart des navigateurs actuels.
           </p>
           <h4>Grid Layout</h4>
-          <p>
-              ...
-          </p>
+          <p>Le module de positionnement "Grid Layout" est aussi une spécification W3C à l'état de brouillon.</p>
+          <p>Le principe de ce module est de diviser virtuellement l'espace d'une page en plusieurs zones sous forme de lignes et de colonnes. On se retrouve donc avec un système de grille permettant de placer nos éléments.
+            Néanmoins, cette notion de grille n'est qu'une construction de l'esprit pour l'utilisateur, cela ne nécessite aucune balises HTML spécifique pour la mettre en place.</p>
+            <p>Les propriétés du module:
+              <ul>
+                  <li><span class="blue_word">grid, inline-grid</span>: Déclaration d'un contexte de grille (création d'un "grid-container").</li>
+                  <li><span class="blue_word">grid-template-areas</span>: Déclaration d'un "canevas" de cellules nommées.</li>
+                  <li><span class="blue_word">grid-template-rows, grid-template-columns</span>: Déclaration des dimensions de lignes et colonnes.</li>
+                  <li><span class="blue_word">grid-row, grid-column</span>: Placement d'un élément "grid-item" dans une ligne ou une colonne</li>
+                  <li><span class="blue_word">grid-gap, grid-column-gap, grid-row-gap</span>: Espaces inter-colonnes ou inter-rangées (gouttières).</li>
+                  <li><span class="blue_word">align-items, justify-items</span>: Alignement horizontal ou vertical.</li>
+                  <li><span class="blue_word">align-self, justify-self</span>: Alignement horizontal ou vertical d'éléments distincts</li>                                                                      
+              </ul>
+            </p>
+            <pre><code class="css">body {
+  display: grid;
+  grid-template-columns: 200px 400px;
+}
+#texte {
+  grid-column: 1; /* placement en colonne 1 */
+}
+#image {
+  grid-column: 2; /* placement en colonne 2 */
+}
+            </code></pre>
+            <p>Le CSS ci-dessus permettra par exemple, d'aligner sur la même ligne, les deux div ayant les id "texte" et "image" à l'intérieur du body.</p>
+            <p>Néanmoins, la grosse faiblesse de ce module pour l'instant et qu'il n'est supporté nativement que par IE 10+. Concernant Chrome, Firefox et Opera, il est nécessaire d'activter un flag dans les paramètres du navigateur.</p>
+            
           <h4>Template Layout</h4>
           <p>
               ...
